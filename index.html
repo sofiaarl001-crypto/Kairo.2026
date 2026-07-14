@@ -157,7 +157,7 @@
 
         .main-product-img {
             width: 100%;
-            height: 350px;
+            height: 400px;
             object-fit: cover;
             border-radius: 10px;
             margin-bottom: 10px;
@@ -433,9 +433,8 @@
         <h2 class="section-title">Ropa Deportiva</h2>
         <div class="products-grid">
             
-            <!-- PRODUCTO NUEVO: Conjunto Aralina -->
+            <!-- Producto 1: Conjunto Aralina -->
             <div class="product-card">
-                <!-- Por defecto carga la primera imagen en negro -->
                 <img id="img-aralina-main" class="main-product-img" src="img 1 negro.jpg" alt="Conjunto Aralina">
                 
                 <div class="thumbnail-container">
@@ -456,7 +455,6 @@
                         <option value="L">L</option>
                         <option value="XL">XL</option>
                     </select>
-                    <!-- Al cambiar el color, se llama a la nueva función JS -->
                     <select id="color-aralina" onchange="actualizarFotosAralina()">
                         <option value="" disabled selected>Color</option>
                         <option value="Negro">Negro</option>
@@ -468,7 +466,41 @@
                 <button class="btn-add" onclick="addToCartWithOptions('Conjunto Deportivo Aralina', 35, 'talla-aralina', 'color-aralina')">Añadir al Carrito</button>
             </div>
 
-            <!-- Producto 2 (Leggings Genérico) -->
+            <!-- Producto 2: Conjunto Musera -->
+            <div class="product-card">
+                <!-- Por defecto carga la primera imagen en marrón -->
+                <img id="img-musera-main" class="main-product-img" src="img musera 1 marron.jpg" alt="Conjunto Musera">
+                
+                <div class="thumbnail-container">
+                    <img id="thumb-mus-1" class="thumb-img" src="img musera 1 marron.jpg" onclick="document.getElementById('img-musera-main').src=this.src" title="Vista 1">
+                    <img id="thumb-mus-2" class="thumb-img" src="img musera 2 marron.jpg" onclick="document.getElementById('img-musera-main').src=this.src" title="Vista 2">
+                    <img id="thumb-mus-3" class="thumb-img" src="img musera 3 marron.jpg" onclick="document.getElementById('img-musera-main').src=this.src" title="Vista 3">
+                </div>
+
+                <h3>Conjunto Deportivo Musera</h3>
+                <p class="description">Este conjunto deportivo de Musera combina los mejores colores explosivos, comodidad y tela elástica. Confort y estilo en una misma prenda.</p>
+                <div class="price">$35.00</div>
+                
+                <div class="product-options">
+                    <select id="talla-musera">
+                        <option value="" disabled selected>Talla</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <select id="color-musera" onchange="actualizarFotosMusera()">
+                        <option value="" disabled selected>Color</option>
+                        <option value="Rosado">Rosado</option>
+                        <option value="Marrón">Marrón</option>
+                        <option value="Rosa Viejo">Rosa Viejo</option>
+                        <option value="Azul">Azul</option>
+                    </select>
+                </div>
+                <button class="btn-add" onclick="addToCartWithOptions('Conjunto Deportivo Musera', 35, 'talla-musera', 'color-musera')">Añadir al Carrito</button>
+            </div>
+
+            <!-- Producto 3 (Leggings Genérico) -->
             <div class="product-card">
                 <img id="img-p4" class="main-product-img" src="https://via.placeholder.com/400x400/f0f0f0/afafaf?text=Foto+Leggings" alt="Leggings">
                 
@@ -507,7 +539,7 @@
         <h2 class="section-title">Trajes de Baño</h2>
         <div class="products-grid">
             
-            <!-- Producto 3 (Traje de Baño) -->
+            <!-- Producto 4 (Traje de Baño 2 Piezas) -->
             <div class="product-card">
                 <img id="img-p1" class="main-product-img" src="https://via.placeholder.com/400x400/f0f0f0/afafaf?text=Foto+Traje+Baño" alt="Set Traje de Baño">
                 
@@ -537,7 +569,7 @@
                 <button class="btn-add" onclick="addToCartWithOptions('Set Traje Baño', 25, 'talla-1', 'color-1')">Añadir al Carrito</button>
             </div>
 
-            <!-- Producto 4 (Enterizo) -->
+            <!-- Producto 5 (Enterizo) -->
             <div class="product-card">
                 <img id="img-p2" class="main-product-img" src="https://via.placeholder.com/400x400/f0f0f0/afafaf?text=Foto+Enterizo" alt="Enterizo">
                 
@@ -613,25 +645,36 @@
     <script>
         let cart = [];
 
-        // NUEVA FUNCIÓN ESPECIAL PARA EL CONJUNTO ARALINA
         function actualizarFotosAralina() {
             const colorSelect = document.getElementById('color-aralina').value;
-            
             if (colorSelect) {
-                // Limpia el nombre del color elegido (quita tildes y lo pone en minúscula)
                 const colorLimpio = colorSelect.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
                 
-                // Actualiza la foto principal a la #1 de ese color
                 document.getElementById('img-aralina-main').src = `img 1 ${colorLimpio}.jpg`;
-                
-                // Actualiza las miniaturas a las fotos 1, 2 y 3 de ese color
                 document.getElementById('thumb-ara-1').src = `img 1 ${colorLimpio}.jpg`;
                 document.getElementById('thumb-ara-2').src = `img 2 ${colorLimpio}.jpg`;
                 document.getElementById('thumb-ara-3').src = `img 3 ${colorLimpio}.jpg`;
             }
         }
 
-        // Función para los demás productos genéricos
+        function actualizarFotosMusera() {
+            const colorSelect = document.getElementById('color-musera').value;
+            
+            if (colorSelect) {
+                let colorLimpio = "";
+                
+                if (colorSelect === "Rosado") colorLimpio = "rosado";
+                else if (colorSelect === "Marrón") colorLimpio = "marron";
+                else if (colorSelect === "Rosa Viejo") colorLimpio = "rviejo";
+                else if (colorSelect === "Azul") colorLimpio = "azul";
+                
+                document.getElementById('img-musera-main').src = `img musera 1 ${colorLimpio}.jpg`;
+                document.getElementById('thumb-mus-1').src = `img musera 1 ${colorLimpio}.jpg`;
+                document.getElementById('thumb-mus-2').src = `img musera 2 ${colorLimpio}.jpg`;
+                document.getElementById('thumb-mus-3').src = `img musera 3 ${colorLimpio}.jpg`;
+            }
+        }
+
         function actualizarImagenDinamica(idImagenElemento, prefijoProducto, idSelectorColor, idSelectorTalla) {
             const colorSeleccionado = document.getElementById(idSelectorColor).value;
             const tallaSeleccionada = document.getElementById(idSelectorTalla).value;
