@@ -43,7 +43,7 @@
         }
 
         .logo-container img {
-            height: 80px; /* Ajustable según necesites */
+            height: 80px; 
             object-fit: contain;
         }
 
@@ -184,23 +184,34 @@
         .aliados h2 {
             color: var(--color-dark);
             margin-bottom: 30px;
+            font-size: 2rem;
         }
 
-        .aliados-list {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
+        .aliados-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
-            list-style: none;
+            padding: 0 5%;
         }
 
-        .aliados-list li {
+        .aliado-card {
             background-color: var(--color-white);
-            padding: 15px 30px;
-            border-radius: 25px;
-            font-weight: bold;
-            color: var(--color-blue);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            text-align: left;
+        }
+
+        .aliado-card h3 {
+            color: var(--color-pink);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .aliado-card p {
+            color: var(--color-dark);
+            font-size: 0.95rem;
+            line-height: 1.5;
         }
 
         /* --- Footer --- */
@@ -273,7 +284,7 @@
         }
 
         .btn-whatsapp {
-            background-color: #25D366; /* Color de WhatsApp */
+            background-color: #25D366;
             color: white;
             border: none;
             padding: 15px;
@@ -299,7 +310,7 @@
     <!-- Encabezado -->
     <header>
         <div class="logo-container">
-            <img src="kai ro.jpg" alt="Logo Kairo since 2026">
+            <img src="kai ro (1).jpg" alt="Logo Kairo since 2026">
         </div>
         <nav>
             <ul>
@@ -319,32 +330,28 @@
         <p>La combinación perfecta de estilo y comodidad para tus días de gimnasio y playa. ¡Encuentra tu pieza favorita!</p>
     </section>
 
-    <!-- Catálogo de Productos (Ejemplos Editables) -->
+    <!-- Catálogo de Productos -->
     <section id="productos">
         <h2 class="section-title">Nuestra Colección</h2>
         <div class="products-grid">
-            <!-- Producto 1 -->
             <div class="product-card">
                 <div class="product-image">Foto Traje de Baño</div>
                 <h3>Set Traje de Baño 2 Piezas</h3>
                 <div class="price">$25.00</div>
                 <button class="btn-add" onclick="addToCart('Set Traje de Baño 2 Piezas', 25)">Añadir al Carrito</button>
             </div>
-            <!-- Producto 2 -->
             <div class="product-card">
                 <div class="product-image">Foto Top Deportivo</div>
                 <h3>Top Deportivo Seamless</h3>
                 <div class="price">$15.00</div>
                 <button class="btn-add" onclick="addToCart('Top Deportivo Seamless', 15)">Añadir al Carrito</button>
             </div>
-            <!-- Producto 3 -->
             <div class="product-card">
                 <div class="product-image">Foto Leggings</div>
                 <h3>Leggings Push Up</h3>
                 <div class="price">$20.00</div>
                 <button class="btn-add" onclick="addToCart('Leggings Push Up', 20)">Añadir al Carrito</button>
             </div>
-            <!-- Producto 4 -->
             <div class="product-card">
                 <div class="product-image">Foto Enterizo Playa</div>
                 <h3>Traje de Baño Enterizo</h3>
@@ -357,12 +364,28 @@
     <!-- Sección Aliados -->
     <section id="aliados" class="aliados">
         <h2>Nuestros Aliados</h2>
-        <ul class="aliados-list">
-            <li>Opulessa by Shein</li>
-            <li>Costavie by Shein</li>
-            <li>Musera by Shein</li>
-            <li>Aralina by Shein</li>
-        </ul>
+        <div class="aliados-grid">
+            <!-- Aliado 1 -->
+            <div class="aliado-card">
+                <h3>Opulessa by Shein</h3>
+                <p>Fabrican principalmente con textiles sintéticos y elásticos, diseñados específicamente bajo una estética glamorosa, festiva y de vacaciones.</p>
+            </div>
+            <!-- Aliado 2 -->
+            <div class="aliado-card">
+                <h3>Costavie by Shein</h3>
+                <p>Especializada en trajes de baño y ropa de playa moderna. Fabricados principalmente con fibras sintéticas de poliéster, materiales perfectos para el agua porque secan rápido, estiran y no pierden la forma.</p>
+            </div>
+            <!-- Aliado 3 -->
+            <div class="aliado-card">
+                <h3>Musera by Shein</h3>
+                <p>Enfocada en un estilo versátil que mezcla ropa casual, urbana y deportiva. Utiliza mucho la poliamida y el elastano en sus prendas para lograr texturas muy elásticas y suaves al tacto.</p>
+            </div>
+            <!-- Aliado 4 -->
+            <div class="aliado-card">
+                <h3>Aralina by Shein</h3>
+                <p>Mezcla un estilo casual chic, romántico y vacacional. Utiliza mucho el poliéster y la viscosa para crear vestidos fluidos, blusas con volantes y trajes de baño con estampados florales o de lunares.</p>
+            </div>
+        </div>
     </section>
 
     <!-- Pie de Página -->
@@ -372,22 +395,22 @@
         <p style="margin-top: 20px; font-size: 0.9rem; color: var(--color-grey);">&copy; 2026 Kairo. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- Carrito Lateral (Oculto por defecto) -->
+    <!-- Carrito Lateral -->
     <div id="cart-modal">
         <div class="cart-header">
             <h2>Tu Carrito</h2>
             <span class="close-cart" onclick="toggleCart()">✖</span>
         </div>
         <ul id="cart-items">
-            <!-- Los items aparecerán aquí mediante JavaScript -->
+            <!-- Items del JS -->
         </ul>
         <div class="cart-total">
             Total: $<span id="cart-total-price">0.00</span>
         </div>
-        <button class="btn-whatsapp" onclick="sendToWhatsApp()">Pedir por WhatsApp</button>
+        <button class="btn-whatsapp" onclick="sendToWhatsApp()">Pagar y enviar por WhatsApp</button>
     </div>
 
-    <!-- Funcionalidad del Carrito -->
+    <!-- Funcionalidad -->
     <script>
         let cart = [];
 
@@ -395,7 +418,6 @@
             cart.push({ name: productName, price: price });
             updateCartUI();
             
-            // Efecto visual al botón del carrito
             const cartIcon = document.querySelector('.cart-icon');
             cartIcon.style.transform = 'scale(1.2)';
             setTimeout(() => cartIcon.style.transform = 'scale(1)', 200);
@@ -406,15 +428,11 @@
             const cartItemsContainer = document.getElementById('cart-items');
             const cartTotalPrice = document.getElementById('cart-total-price');
 
-            // Actualizar contador
             cartCount.innerText = cart.length;
-
-            // Limpiar lista
             cartItemsContainer.innerHTML = '';
 
             let total = 0;
 
-            // Llenar lista
             cart.forEach((item, index) => {
                 total += item.price;
                 const li = document.createElement('li');
@@ -425,7 +443,6 @@
                 cartItemsContainer.appendChild(li);
             });
 
-            // Actualizar total
             cartTotalPrice.innerText = total.toFixed(2);
         }
 
@@ -444,7 +461,7 @@
                 return;
             }
 
-            let message = "¡Hola Kairo! 🌴 Me gustaría realizar el siguiente pedido:\n\n";
+            let message = "¡Hola Kairo! 🌴 Me gustaría realizar el siguiente pedido y proceder con el pago:\n\n";
             let total = 0;
 
             cart.forEach((item, index) => {
@@ -453,15 +470,11 @@
             });
 
             message += `\n*Total a pagar:* $${total.toFixed(2)}\n\n`;
-            message += "Quedo atento/a para los detalles de pago y envío. ¡Gracias!";
+            message += "Quedo atento/a para los detalles de pago (Pago Móvil/Zelle) y envío. ¡Gracias!";
 
-            // Codificar el mensaje para la URL
             const encodedMessage = encodeURIComponent(message);
-            
-            // Número de teléfono de Venezuela: 584127776502
             const whatsappUrl = `https://wa.me/584127776502?text=${encodedMessage}`;
             
-            // Abrir WhatsApp en una nueva pestaña
             window.open(whatsappUrl, '_blank');
         }
     </script>
