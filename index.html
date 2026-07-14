@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kairo since 2026 | Ropa Deportiva y Trajes de Baño</title>
     
-    <!-- Importando la fuente League Spartan -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
     <style>
-        /* --- Paleta de Colores --- */
         :root {
             --color-yellow: #ffe370;
             --color-blue: #99c0d4;
@@ -22,7 +20,6 @@
             --color-dark: #333333;
         }
 
-        /* --- Estilos Generales --- */
         * {
             margin: 0;
             padding: 0;
@@ -35,7 +32,6 @@
             color: var(--color-dark);
         }
 
-        /* --- Encabezado y Navegación --- */
         header {
             background-color: var(--color-white);
             display: flex;
@@ -90,7 +86,6 @@
             color: white;
         }
 
-        /* --- Sección Principal (Hero) --- */
         .hero {
             background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('fondo.jpg');
             background-size: cover;
@@ -101,7 +96,7 @@
         }
 
         .hero h1 {
-            font-size: 6rem; /* Letra KAIRO en grande */
+            font-size: 6rem;
             margin-bottom: 0px;
             text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
             font-weight: 900;
@@ -109,7 +104,7 @@
         }
 
         .hero .subtitle {
-            font-size: 1.8rem; /* since 2026 en pequeño */
+            font-size: 1.8rem;
             margin-bottom: 25px;
             font-weight: 300;
             letter-spacing: 6px;
@@ -126,18 +121,19 @@
             text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
         }
 
-        /* --- Productos --- */
         .section-title {
             text-align: center;
-            margin: 50px 0 30px;
+            margin: 60px 0 30px;
             font-size: 2.5rem;
             color: var(--color-pink);
             font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             padding: 0 5%;
             margin-bottom: 50px;
@@ -150,6 +146,8 @@
             padding: 20px;
             text-align: center;
             transition: box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
         }
 
         .product-card:hover {
@@ -157,22 +155,48 @@
             border-color: var(--color-blue);
         }
 
-        .product-image {
-            background-color: #f0f0f0;
-            height: 200px;
+        .main-product-img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
             border-radius: 10px;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
+            background-color: #f0f0f0;
+        }
+
+        .thumbnail-container {
             display: flex;
-            align-items: center;
             justify-content: center;
-            color: var(--color-grey);
-            font-style: italic;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .thumb-img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            background-color: #f0f0f0;
+        }
+
+        .thumb-img:hover {
+            border-color: var(--color-pink);
         }
 
         .product-card h3 {
             margin-bottom: 10px;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: 600;
+        }
+
+        .product-card p.description {
+            font-size: 0.95rem;
+            color: var(--color-dark);
+            margin-bottom: 15px;
+            line-height: 1.4;
+            flex-grow: 1; 
         }
 
         .product-card .price {
@@ -182,7 +206,6 @@
             margin-bottom: 15px;
         }
 
-        /* Opciones de Talla y Color */
         .product-options {
             display: flex;
             justify-content: space-between;
@@ -192,12 +215,11 @@
 
         .product-options select {
             width: 100%;
-            padding: 8px;
+            padding: 10px;
             border-radius: 8px;
             border: 1px solid var(--color-grey);
             background-color: #f9f9f9;
             font-size: 1rem;
-            font-family: inherit;
             outline: none;
             cursor: pointer;
         }
@@ -219,7 +241,6 @@
             background-color: var(--color-purple);
         }
 
-        /* --- Aliados --- */
         .aliados {
             background-color: var(--color-yellow);
             padding: 50px 20px;
@@ -259,7 +280,6 @@
             line-height: 1.5;
         }
 
-        /* --- Footer --- */
         footer {
             background-color: var(--color-dark);
             color: var(--color-white);
@@ -277,7 +297,6 @@
             font-weight: bold;
         }
 
-        /* --- Modal del Carrito --- */
         #cart-modal {
             display: none;
             position: fixed;
@@ -353,11 +372,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: background-color 0.2s;
-        }
-
-        .btn-remove:hover {
-            background-color: #cc0000;
         }
 
         .cart-total {
@@ -377,18 +391,12 @@
             font-weight: bold;
             width: 100%;
             font-size: 1.2rem;
-            font-family: 'League Spartan', sans-serif;
-        }
-
-        .btn-whatsapp:hover {
-            background-color: #128C7E;
         }
 
         @media (max-width: 768px) {
             header { flex-direction: column; gap: 15px; }
             .hero h1 { font-size: 4rem; }
-            .hero .subtitle { font-size: 1.2rem; }
-            .hero p { font-size: 1.2rem; }
+            nav a { font-size: 1rem; }
         }
     </style>
 </head>
@@ -401,8 +409,8 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#hero">Inicio</a></li>
-                <li><a href="#productos">Tienda</a></li>
+                <li><a href="#ropa-deportiva">Deportiva</a></li>
+                <li><a href="#trajes-de-bano">Trajes de Baño</a></li>
                 <li><a href="#aliados">Aliados</a></li>
             </ul>
         </nav>
@@ -411,107 +419,152 @@
         </div>
     </header>
 
-    <!-- Sección Hero / Slogan -->
+    <!-- Sección Hero -->
     <section id="hero" class="hero">
         <h1>KAIRO</h1>
         <h2 class="subtitle">since 2026</h2>
-        <p>La combinación perfecta de estilo y comodidad para tus días de gimnasio y playa. ¡Encuentra tu pieza favorita!</p>
+        <p>La combinación perfecta de estilo y comodidad para tus días de gimnasio y playa.</p>
     </section>
 
-    <!-- Catálogo de Productos -->
-    <section id="productos">
-        <h2 class="section-title">Nuestra Colección</h2>
+    <!-- ========================================== -->
+    <!-- SECCIÓN 1: ROPA DEPORTIVA                  -->
+    <!-- ========================================== -->
+    <section id="ropa-deportiva">
+        <h2 class="section-title">Ropa Deportiva</h2>
         <div class="products-grid">
             
-            <!-- Producto 1 -->
+            <!-- PRODUCTO NUEVO: Conjunto Aralina -->
             <div class="product-card">
-                <div class="product-image">Foto Traje de Baño</div>
-                <h3>Set Traje de Baño 2 Piezas</h3>
-                <div class="price">$25.00</div>
-                <div class="product-options">
-                    <select id="talla-1">
-                        <option value="" disabled selected>Talla</option>
-                        <option value="S">S</option>
-                        <option value="M">M</option>
-                        <option value="L">L</option>
-                    </select>
-                    <select id="color-1">
-                        <option value="" disabled selected>Color</option>
-                        <option value="Negro">Negro</option>
-                        <option value="Rosado">Rosado</option>
-                        <option value="Celeste">Celeste</option>
-                    </select>
+                <!-- Por defecto carga la primera imagen en negro -->
+                <img id="img-aralina-main" class="main-product-img" src="img 1 negro.jpg" alt="Conjunto Aralina">
+                
+                <div class="thumbnail-container">
+                    <img id="thumb-ara-1" class="thumb-img" src="img 1 negro.jpg" onclick="document.getElementById('img-aralina-main').src=this.src" title="Vista 1">
+                    <img id="thumb-ara-2" class="thumb-img" src="img 2 negro.jpg" onclick="document.getElementById('img-aralina-main').src=this.src" title="Vista 2">
+                    <img id="thumb-ara-3" class="thumb-img" src="img 3 negro.jpg" onclick="document.getElementById('img-aralina-main').src=this.src" title="Vista 3">
                 </div>
-                <button class="btn-add" onclick="addToCartWithOptions('Set Traje de Baño 2 Piezas', 25, 'talla-1', 'color-1')">Añadir al Carrito</button>
-            </div>
 
-            <!-- Producto 2 -->
-            <div class="product-card">
-                <div class="product-image">Foto Top Deportivo</div>
-                <h3>Top Deportivo Seamless</h3>
-                <div class="price">$15.00</div>
+                <h3>Conjunto Deportivo Aralina</h3>
+                <p class="description">El set de aralina que tu rutina necesita: colores explosivos, máxima sujeción y tela transpirable. Combina comodidad y estilo a tu alcance.</p>
+                <div class="price">$35.00</div>
+                
                 <div class="product-options">
-                    <select id="talla-2">
-                        <option value="" disabled selected>Talla</option>
-                        <option value="XS">XS</option>
-                        <option value="S">S</option>
-                        <option value="M">M</option>
-                    </select>
-                    <select id="color-2">
-                        <option value="" disabled selected>Color</option>
-                        <option value="Blanco">Blanco</option>
-                        <option value="Lila">Lila</option>
-                        <option value="Gris">Gris</option>
-                    </select>
-                </div>
-                <button class="btn-add" onclick="addToCartWithOptions('Top Deportivo Seamless', 15, 'talla-2', 'color-2')">Añadir al Carrito</button>
-            </div>
-
-            <!-- Producto 3 -->
-            <div class="product-card">
-                <div class="product-image">Foto Leggings</div>
-                <h3>Leggings Push Up</h3>
-                <div class="price">$20.00</div>
-                <div class="product-options">
-                    <select id="talla-3">
+                    <select id="talla-aralina">
                         <option value="" disabled selected>Talla</option>
                         <option value="S">S</option>
                         <option value="M">M</option>
                         <option value="L">L</option>
                         <option value="XL">XL</option>
                     </select>
-                    <select id="color-3">
+                    <!-- Al cambiar el color, se llama a la nueva función JS -->
+                    <select id="color-aralina" onchange="actualizarFotosAralina()">
                         <option value="" disabled selected>Color</option>
                         <option value="Negro">Negro</option>
-                        <option value="Azul Marino">Azul Marino</option>
-                        <option value="Vino">Vino</option>
+                        <option value="Marron">Marrón</option>
+                        <option value="Azul">Azul</option>
+                        <option value="Rosado">Rosado</option>
                     </select>
                 </div>
-                <button class="btn-add" onclick="addToCartWithOptions('Leggings Push Up', 20, 'talla-3', 'color-3')">Añadir al Carrito</button>
+                <button class="btn-add" onclick="addToCartWithOptions('Conjunto Deportivo Aralina', 35, 'talla-aralina', 'color-aralina')">Añadir al Carrito</button>
             </div>
 
-            <!-- Producto 4 -->
+            <!-- Producto 2 (Leggings Genérico) -->
             <div class="product-card">
-                <div class="product-image">Foto Enterizo Playa</div>
-                <h3>Traje de Baño Enterizo</h3>
-                <div class="price">$30.00</div>
+                <img id="img-p4" class="main-product-img" src="https://via.placeholder.com/400x400/f0f0f0/afafaf?text=Foto+Leggings" alt="Leggings">
+                
+                <div class="thumbnail-container">
+                    <img class="thumb-img" src="https://via.placeholder.com/400x400/f0f0f0/afafaf?text=1" onclick="document.getElementById('img-p4').src=this.src">
+                    <img class="thumb-img" src="https://via.placeholder.com/400x400/f0f0f0/afafaf?text=2" onclick="document.getElementById('img-p4').src=this.src">
+                </div>
+
+                <h3>Leggings Push Up</h3>
+                <p class="description">Nuestros clásicos leggings push up para máxima confianza en cada movimiento.</p>
+                <div class="price">$20.00</div>
                 <div class="product-options">
-                    <select id="talla-4">
+                    <select id="talla-4" onchange="actualizarImagenDinamica('img-p4', 'p4', 'color-4', 'talla-4')">
                         <option value="" disabled selected>Talla</option>
                         <option value="S">S</option>
                         <option value="M">M</option>
                         <option value="L">L</option>
                     </select>
-                    <select id="color-4">
+                    <select id="color-4" onchange="actualizarImagenDinamica('img-p4', 'p4', 'color-4', 'talla-4')">
+                        <option value="" disabled selected>Color</option>
+                        <option value="Negro">Negro</option>
+                        <option value="Azul">Azul</option>
+                        <option value="Vino">Vino</option>
+                    </select>
+                </div>
+                <button class="btn-add" onclick="addToCartWithOptions('Leggings Push Up', 20, 'talla-4', 'color-4')">Añadir al Carrito</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SECCIÓN 2: TRAJES DE BAÑO                  -->
+    <!-- ========================================== -->
+    <section id="trajes-de-bano">
+        <h2 class="section-title">Trajes de Baño</h2>
+        <div class="products-grid">
+            
+            <!-- Producto 3 (Traje de Baño) -->
+            <div class="product-card">
+                <img id="img-p1" class="main-product-img" src="https://via.placeholder.com/400x400/f0f0f0/afafaf?text=Foto+Traje+Baño" alt="Set Traje de Baño">
+                
+                <div class="thumbnail-container">
+                    <img class="thumb-img" src="https://via.placeholder.com/400x400/f0f0f0/afafaf?text=1" onclick="document.getElementById('img-p1').src=this.src">
+                    <img class="thumb-img" src="https://via.placeholder.com/400x400/f0f0f0/afafaf?text=2" onclick="document.getElementById('img-p1').src=this.src">
+                </div>
+
+                <h3>Set Traje de Baño 2 Piezas</h3>
+                <p class="description">Ideal para disfrutar del sol con un ajuste cómodo y moderno.</p>
+                <div class="price">$25.00</div>
+                
+                <div class="product-options">
+                    <select id="talla-1" onchange="actualizarImagenDinamica('img-p1', 'p1', 'color-1', 'talla-1')">
+                        <option value="" disabled selected>Talla</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                    </select>
+                    <select id="color-1" onchange="actualizarImagenDinamica('img-p1', 'p1', 'color-1', 'talla-1')">
+                        <option value="" disabled selected>Color</option>
+                        <option value="Negro">Negro</option>
+                        <option value="Rosado">Rosado</option>
+                        <option value="Celeste">Celeste</option>
+                    </select>
+                </div>
+                <button class="btn-add" onclick="addToCartWithOptions('Set Traje Baño', 25, 'talla-1', 'color-1')">Añadir al Carrito</button>
+            </div>
+
+            <!-- Producto 4 (Enterizo) -->
+            <div class="product-card">
+                <img id="img-p2" class="main-product-img" src="https://via.placeholder.com/400x400/f0f0f0/afafaf?text=Foto+Enterizo" alt="Enterizo">
+                
+                <div class="thumbnail-container">
+                    <img class="thumb-img" src="https://via.placeholder.com/400x400/f0f0f0/afafaf?text=1" onclick="document.getElementById('img-p2').src=this.src">
+                    <img class="thumb-img" src="https://via.placeholder.com/400x400/f0f0f0/afafaf?text=2" onclick="document.getElementById('img-p2').src=this.src">
+                </div>
+
+                <h3>Traje de Baño Enterizo</h3>
+                <p class="description">Un diseño elegante de una sola pieza, perfecto para la piscina o la playa.</p>
+                <div class="price">$30.00</div>
+                <div class="product-options">
+                    <select id="talla-2" onchange="actualizarImagenDinamica('img-p2', 'p2', 'color-2', 'talla-2')">
+                        <option value="" disabled selected>Talla</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                    </select>
+                    <select id="color-2" onchange="actualizarImagenDinamica('img-p2', 'p2', 'color-2', 'talla-2')">
                         <option value="" disabled selected>Color</option>
                         <option value="Rojo">Rojo</option>
-                        <option value="Estampado Floral">Estampado Floral</option>
+                        <option value="Floral">Floral</option>
                         <option value="Amarillo">Amarillo</option>
                     </select>
                 </div>
-                <button class="btn-add" onclick="addToCartWithOptions('Traje de Baño Enterizo', 30, 'talla-4', 'color-4')">Añadir al Carrito</button>
+                <button class="btn-add" onclick="addToCartWithOptions('Enterizo Playa', 30, 'talla-2', 'color-2')">Añadir al Carrito</button>
             </div>
-
         </div>
     </section>
 
@@ -525,15 +578,15 @@
             </div>
             <div class="aliado-card">
                 <h3>Costavie by Shein</h3>
-                <p>Especializada en trajes de baño y ropa de playa moderna. Fabricados principalmente con fibras sintéticas de poliéster, materiales perfectos para el agua porque secan rápido, estiran y no pierden la forma.</p>
+                <p>Especializada en trajes de baño y ropa de playa moderna. Fabricados con materiales perfectos para el agua porque secan rápido, estiran y no pierden la forma.</p>
             </div>
             <div class="aliado-card">
                 <h3>Musera by Shein</h3>
-                <p>Enfocada en un estilo versátil que mezcla ropa casual, urbana y deportiva. Utiliza mucho la poliamida y el elastano en sus prendas para lograr texturas muy elásticas y suaves al tacto.</p>
+                <p>Enfocada en un estilo versátil que mezcla ropa casual, urbana y deportiva. Utiliza mucho la poliamida y el elastano para lograr texturas muy elásticas.</p>
             </div>
             <div class="aliado-card">
                 <h3>Aralina by Shein</h3>
-                <p>Mezcla un estilo casual chic, romántico y vacacional. Utiliza mucho el poliéster y la viscosa para crear vestidos fluidos, blusas con volantes y trajes de baño con estampados florales o de lunares.</p>
+                <p>Mezcla un estilo casual chic, romántico y vacacional. Utiliza mucho el poliéster y la viscosa para crear vestidos y trajes de baño fluidos.</p>
             </div>
         </div>
     </section>
@@ -551,33 +604,56 @@
             <h2>Tu Carrito</h2>
             <span class="close-cart" onclick="toggleCart()">✖</span>
         </div>
-        <ul id="cart-items">
-            <!-- Items del JS -->
-        </ul>
-        <div class="cart-total">
-            Total: $<span id="cart-total-price">0.00</span>
-        </div>
+        <ul id="cart-items"></ul>
+        <div class="cart-total">Total: $<span id="cart-total-price">0.00</span></div>
         <button class="btn-whatsapp" onclick="sendToWhatsApp()">Pagar y enviar por WhatsApp</button>
     </div>
 
-    <!-- Funcionalidad -->
+    <!-- Script de Funcionalidades -->
     <script>
         let cart = [];
 
-        // Nueva función de añadir al carrito que lee la talla y el color
+        // NUEVA FUNCIÓN ESPECIAL PARA EL CONJUNTO ARALINA
+        function actualizarFotosAralina() {
+            const colorSelect = document.getElementById('color-aralina').value;
+            
+            if (colorSelect) {
+                // Limpia el nombre del color elegido (quita tildes y lo pone en minúscula)
+                const colorLimpio = colorSelect.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+                
+                // Actualiza la foto principal a la #1 de ese color
+                document.getElementById('img-aralina-main').src = `img 1 ${colorLimpio}.jpg`;
+                
+                // Actualiza las miniaturas a las fotos 1, 2 y 3 de ese color
+                document.getElementById('thumb-ara-1').src = `img 1 ${colorLimpio}.jpg`;
+                document.getElementById('thumb-ara-2').src = `img 2 ${colorLimpio}.jpg`;
+                document.getElementById('thumb-ara-3').src = `img 3 ${colorLimpio}.jpg`;
+            }
+        }
+
+        // Función para los demás productos genéricos
+        function actualizarImagenDinamica(idImagenElemento, prefijoProducto, idSelectorColor, idSelectorTalla) {
+            const colorSeleccionado = document.getElementById(idSelectorColor).value;
+            const tallaSeleccionada = document.getElementById(idSelectorTalla).value;
+
+            if(colorSeleccionado && tallaSeleccionada) {
+                const colorFormateado = colorSeleccionado.toLowerCase().replace(/\s+/g, '-');
+                const tallaFormateada = tallaSeleccionada.toLowerCase();
+                const nuevoNombreImagen = `${prefijoProducto}-${colorFormateado}-${tallaFormateada}.jpg`;
+                document.getElementById(idImagenElemento).src = nuevoNombreImagen;
+            }
+        }
+
         function addToCartWithOptions(productName, price, selectTallaId, selectColorId) {
             const talla = document.getElementById(selectTallaId).value;
             const color = document.getElementById(selectColorId).value;
 
-            // Validación: Asegurarse de que eligió ambas cosas
             if (!talla || !color) {
                 alert("⚠️ Por favor, selecciona una talla y un color antes de añadir al carrito.");
                 return;
             }
 
-            // Crear el nombre completo del producto con sus opciones
             const productNameWithOptions = `${productName} (Color: ${color}, Talla: ${talla})`;
-
             cart.push({ name: productNameWithOptions, price: price });
             updateCartUI();
             
@@ -585,7 +661,6 @@
             cartIcon.style.transform = 'scale(1.2)';
             setTimeout(() => cartIcon.style.transform = 'scale(1)', 200);
 
-            // Reiniciar los selectores a su estado original después de agregar
             document.getElementById(selectTallaId).value = "";
             document.getElementById(selectColorId).value = "";
         }
@@ -602,7 +677,6 @@
 
             cartCount.innerText = cart.length;
             cartItemsContainer.innerHTML = '';
-
             let total = 0;
 
             cart.forEach((item, index) => {
@@ -623,11 +697,7 @@
 
         function toggleCart() {
             const modal = document.getElementById('cart-modal');
-            if (modal.style.display === 'flex') {
-                modal.style.display = 'none';
-            } else {
-                modal.style.display = 'flex';
-            }
+            modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
         }
 
         function sendToWhatsApp() {
@@ -648,9 +718,7 @@
             message += "Quedo atento/a para los detalles de pago (Pago Móvil/Zelle) y envío. ¡Gracias!";
 
             const encodedMessage = encodeURIComponent(message);
-            const whatsappUrl = `https://wa.me/584127776502?text=${encodedMessage}`;
-            
-            window.open(whatsappUrl, '_blank');
+            window.open(`https://wa.me/584127776502?text=${encodedMessage}`, '_blank');
         }
     </script>
 </body>
