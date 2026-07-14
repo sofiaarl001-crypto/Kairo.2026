@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kairo since 2026 | Ropa Deportiva y Trajes de Baño</title>
+    <style>
+        /* --- Paleta de Colores --- */
+        :root {
+            --color-yellow: #ffe370;
+            --color-blue: #99c0d4;
+            --color-pink: #ff32b0;
+            --color-purple: #e2a9f1;
+            --color-grey: #afafaf;
+            --color-white: #ffffff;
+            --color-dark: #333333;
+        }
+
+        /* --- Estilos Generales --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #fafafa;
+            color: var(--color-dark);
+        }
+
+        /* --- Encabezado y Navegación --- */
+        header {
+            background-color: var(--color-white);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-container img {
+            height: 80px; /* Ajustable según necesites */
+            object-fit: contain;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--color-dark);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--color-pink);
+        }
+
+        .cart-icon {
+            background-color: var(--color-yellow);
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.2s;
+        }
+        
+        .cart-icon:hover {
+            transform: scale(1.05);
+            background-color: var(--color-blue);
+            color: white;
+        }
+
+        /* --- Sección Principal (Hero) --- */
+        .hero {
+            background: linear-gradient(135deg, var(--color-purple) 0%, var(--color-blue) 100%);
+            color: var(--color-white);
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        /* --- Productos --- */
+        .section-title {
+            text-align: center;
+            margin: 50px 0 30px;
+            font-size: 2rem;
+            color: var(--color-pink);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 0 5%;
+            margin-bottom: 50px;
+        }
+
+        .product-card {
+            background-color: var(--color-white);
+            border: 1px solid var(--color-grey);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-color: var(--color-blue);
+        }
+
+        .product-image {
+            background-color: #f0f0f0;
+            height: 200px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-grey);
+            font-style: italic;
+        }
+
+        .product-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .product-card .price {
+            color: var(--color-pink);
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .btn-add {
+            background-color: var(--color-pink);
+            color: var(--color-white);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        .btn-add:hover {
+            background-color: var(--color-purple);
+        }
+
+        /* --- Aliados --- */
+        .aliados {
+            background-color: var(--color-yellow);
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .aliados h2 {
+            color: var(--color-dark);
+            margin-bottom: 30px;
+        }
+
+        .aliados-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .aliados-list li {
+            background-color: var(--color-white);
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-weight: bold;
+            color: var(--color-blue);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--color-dark);
+            color: var(--color-white);
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        footer p {
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
+
+        footer .highlight {
+            color: var(--color-yellow);
+            font-weight: bold;
+        }
+
+        /* --- Modal del Carrito --- */
+        #cart-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 350px;
+            height: 100%;
+            background-color: var(--color-white);
+            box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+            z-index: 1001;
+            padding: 20px;
+            flex-direction: column;
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--color-grey);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .close-cart {
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--color-grey);
+        }
+
+        #cart-items {
+            flex-grow: 1;
+            overflow-y: auto;
+            list-style: none;
+        }
+
+        #cart-items li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .cart-total {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 20px 0;
+            text-align: right;
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366; /* Color de WhatsApp */
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            font-size: 1.1rem;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+        }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; }
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <div class="logo-container">
+            <img src="kai ro.jpg" alt="Logo Kairo since 2026">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#hero">Inicio</a></li>
+                <li><a href="#productos">Tienda</a></li>
+                <li><a href="#aliados">Aliados</a></li>
+            </ul>
+        </nav>
+        <div class="cart-icon" onclick="toggleCart()">
+            🛒 <span id="cart-count">0</span>
+        </div>
+    </header>
+
+    <!-- Sección Hero / Slogan -->
+    <section id="hero" class="hero">
+        <h1>Kairo since 2026</h1>
+        <p>La combinación perfecta de estilo y comodidad para tus días de gimnasio y playa. ¡Encuentra tu pieza favorita!</p>
+    </section>
+
+    <!-- Catálogo de Productos (Ejemplos Editables) -->
+    <section id="productos">
+        <h2 class="section-title">Nuestra Colección</h2>
+        <div class="products-grid">
+            <!-- Producto 1 -->
+            <div class="product-card">
+                <div class="product-image">Foto Traje de Baño</div>
+                <h3>Set Traje de Baño 2 Piezas</h3>
+                <div class="price">$25.00</div>
+                <button class="btn-add" onclick="addToCart('Set Traje de Baño 2 Piezas', 25)">Añadir al Carrito</button>
+            </div>
+            <!-- Producto 2 -->
+            <div class="product-card">
+                <div class="product-image">Foto Top Deportivo</div>
+                <h3>Top Deportivo Seamless</h3>
+                <div class="price">$15.00</div>
+                <button class="btn-add" onclick="addToCart('Top Deportivo Seamless', 15)">Añadir al Carrito</button>
+            </div>
+            <!-- Producto 3 -->
+            <div class="product-card">
+                <div class="product-image">Foto Leggings</div>
+                <h3>Leggings Push Up</h3>
+                <div class="price">$20.00</div>
+                <button class="btn-add" onclick="addToCart('Leggings Push Up', 20)">Añadir al Carrito</button>
+            </div>
+            <!-- Producto 4 -->
+            <div class="product-card">
+                <div class="product-image">Foto Enterizo Playa</div>
+                <h3>Traje de Baño Enterizo</h3>
+                <div class="price">$30.00</div>
+                <button class="btn-add" onclick="addToCart('Traje de Baño Enterizo', 30)">Añadir al Carrito</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Aliados -->
+    <section id="aliados" class="aliados">
+        <h2>Nuestros Aliados</h2>
+        <ul class="aliados-list">
+            <li>Opulessa by Shein</li>
+            <li>Costavie by Shein</li>
+            <li>Musera by Shein</li>
+            <li>Aralina by Shein</li>
+        </ul>
+    </section>
+
+    <!-- Pie de Página -->
+    <footer>
+        <p class="highlight">Valencia, Venezuela.</p>
+        <p>Tu pedido, donde quiera que estés. Envíos garantizados a nivel nacional.</p>
+        <p style="margin-top: 20px; font-size: 0.9rem; color: var(--color-grey);">&copy; 2026 Kairo. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Carrito Lateral (Oculto por defecto) -->
+    <div id="cart-modal">
+        <div class="cart-header">
+            <h2>Tu Carrito</h2>
+            <span class="close-cart" onclick="toggleCart()">✖</span>
+        </div>
+        <ul id="cart-items">
+            <!-- Los items aparecerán aquí mediante JavaScript -->
+        </ul>
+        <div class="cart-total">
+            Total: $<span id="cart-total-price">0.00</span>
+        </div>
+        <button class="btn-whatsapp" onclick="sendToWhatsApp()">Pedir por WhatsApp</button>
+    </div>
+
+    <!-- Funcionalidad del Carrito -->
+    <script>
+        let cart = [];
+
+        function addToCart(productName, price) {
+            cart.push({ name: productName, price: price });
+            updateCartUI();
+            
+            // Efecto visual al botón del carrito
+            const cartIcon = document.querySelector('.cart-icon');
+            cartIcon.style.transform = 'scale(1.2)';
+            setTimeout(() => cartIcon.style.transform = 'scale(1)', 200);
+        }
+
+        function updateCartUI() {
+            const cartCount = document.getElementById('cart-count');
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartTotalPrice = document.getElementById('cart-total-price');
+
+            // Actualizar contador
+            cartCount.innerText = cart.length;
+
+            // Limpiar lista
+            cartItemsContainer.innerHTML = '';
+
+            let total = 0;
+
+            // Llenar lista
+            cart.forEach((item, index) => {
+                total += item.price;
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <span>${item.name}</span>
+                    <span>$${item.price.toFixed(2)}</span>
+                `;
+                cartItemsContainer.appendChild(li);
+            });
+
+            // Actualizar total
+            cartTotalPrice.innerText = total.toFixed(2);
+        }
+
+        function toggleCart() {
+            const modal = document.getElementById('cart-modal');
+            if (modal.style.display === 'flex') {
+                modal.style.display = 'none';
+            } else {
+                modal.style.display = 'flex';
+            }
+        }
+
+        function sendToWhatsApp() {
+            if (cart.length === 0) {
+                alert("Tu carrito está vacío. ¡Añade algunos productos primero!");
+                return;
+            }
+
+            let message = "¡Hola Kairo! 🌴 Me gustaría realizar el siguiente pedido:\n\n";
+            let total = 0;
+
+            cart.forEach((item, index) => {
+                message += `${index + 1}. ${item.name} - $${item.price.toFixed(2)}\n`;
+                total += item.price;
+            });
+
+            message += `\n*Total a pagar:* $${total.toFixed(2)}\n\n`;
+            message += "Quedo atento/a para los detalles de pago y envío. ¡Gracias!";
+
+            // Codificar el mensaje para la URL
+            const encodedMessage = encodeURIComponent(message);
+            
+            // Número de teléfono de Venezuela: 584127776502
+            const whatsappUrl = `https://wa.me/584127776502?text=${encodedMessage}`;
+            
+            // Abrir WhatsApp en una nueva pestaña
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
