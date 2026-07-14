@@ -121,14 +121,42 @@
             text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
         }
 
+        /* Títulos de sección con fondo semitransparente para que resalten */
         .section-title {
             text-align: center;
-            margin: 60px 0 30px;
+            margin: 0 auto 40px auto;
             font-size: 2.5rem;
             color: var(--color-pink);
-            font-weight: 700;
+            font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 1px;
+            background-color: rgba(255, 255, 255, 0.85);
+            display: inline-block;
+            padding: 10px 30px;
+            border-radius: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .section-header-container {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        /* --- FONDOS DE SECCIONES --- */
+        #ropa-deportiva {
+            background-image: url('fondo deporte.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Efecto Parallax */
+            padding: 60px 0;
+        }
+
+        #trajes-de-bano {
+            background-image: url('fondo playa.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Efecto Parallax */
+            padding: 60px 0;
         }
 
         .products-grid {
@@ -136,23 +164,23 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             padding: 0 5%;
-            margin-bottom: 50px;
         }
 
         .product-card {
             background-color: var(--color-white);
-            border: 1px solid var(--color-grey);
+            border: none; /* Quitamos el borde para un look más limpio sobre los fondos */
             border-radius: 15px;
             padding: 20px;
             text-align: center;
-            transition: box-shadow 0.3s;
+            transition: box-shadow 0.3s, transform 0.3s;
             display: flex;
             flex-direction: column;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
         }
 
         .product-card:hover {
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border-color: var(--color-blue);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transform: translateY(-5px);
         }
 
         .main-product-img {
@@ -430,7 +458,9 @@
     <!-- SECCIÓN 1: ROPA DEPORTIVA                  -->
     <!-- ========================================== -->
     <section id="ropa-deportiva">
-        <h2 class="section-title">Ropa Deportiva</h2>
+        <div class="section-header-container">
+            <h2 class="section-title">Ropa Deportiva</h2>
+        </div>
         <div class="products-grid">
             
             <!-- Producto 1: Conjunto Aralina -->
@@ -468,7 +498,6 @@
 
             <!-- Producto 2: Conjunto Musera -->
             <div class="product-card">
-                <!-- Por defecto carga la primera imagen en marrón -->
                 <img id="img-musera-main" class="main-product-img" src="img musera 1 marron.jpg" alt="Conjunto Musera">
                 
                 <div class="thumbnail-container">
@@ -536,7 +565,9 @@
     <!-- SECCIÓN 2: TRAJES DE BAÑO                  -->
     <!-- ========================================== -->
     <section id="trajes-de-bano">
-        <h2 class="section-title">Trajes de Baño</h2>
+        <div class="section-header-container">
+            <h2 class="section-title">Trajes de Baño</h2>
+        </div>
         <div class="products-grid">
             
             <!-- Producto 4 (Traje de Baño 2 Piezas) -->
