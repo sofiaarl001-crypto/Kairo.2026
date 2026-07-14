@@ -8,7 +8,7 @@
     <!-- Importando la fuente League Spartan -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
     <style>
         /* --- Paleta de Colores --- */
@@ -27,7 +27,6 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            /* Aquí aplicamos las fuentes que pediste */
             font-family: 'League Spartan', 'Agrandir', 'Cooper BT', sans-serif;
         }
 
@@ -91,9 +90,8 @@
             color: white;
         }
 
-        /* --- Sección Principal (Hero) CON IMAGEN DE FONDO --- */
+        /* --- Sección Principal (Hero) --- */
         .hero {
-            /* Se añade la imagen fondo.jpg y un filtro oscuro para que se lea la letra blanca */
             background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('fondo.jpg');
             background-size: cover;
             background-position: center;
@@ -103,19 +101,29 @@
         }
 
         .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-            font-weight: 700;
+            font-size: 6rem; /* Letra KAIRO en grande */
+            margin-bottom: 0px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        .hero .subtitle {
+            font-size: 1.8rem; /* since 2026 en pequeño */
+            margin-bottom: 25px;
+            font-weight: 300;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
         }
 
         .hero p {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             max-width: 800px;
             margin: 0 auto;
             line-height: 1.6;
             font-weight: 400;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
         }
 
         /* --- Productos --- */
@@ -129,7 +137,7 @@
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
             padding: 0 5%;
             margin-bottom: 50px;
@@ -172,6 +180,26 @@
             font-size: 1.6rem;
             font-weight: 700;
             margin-bottom: 15px;
+        }
+
+        /* Opciones de Talla y Color */
+        .product-options {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .product-options select {
+            width: 100%;
+            padding: 8px;
+            border-radius: 8px;
+            border: 1px solid var(--color-grey);
+            background-color: #f9f9f9;
+            font-size: 1rem;
+            font-family: inherit;
+            outline: none;
+            cursor: pointer;
         }
 
         .btn-add {
@@ -255,7 +283,7 @@
             position: fixed;
             top: 0;
             right: 0;
-            width: 350px;
+            width: 380px;
             height: 100%;
             background-color: var(--color-white);
             box-shadow: -2px 0 10px rgba(0,0,0,0.2);
@@ -299,10 +327,13 @@
         .item-info {
             display: flex;
             flex-direction: column;
+            width: 85%;
         }
 
         .item-name {
             font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 5px;
         }
 
         .item-price {
@@ -310,14 +341,13 @@
             font-weight: bold;
         }
 
-        /* Botón de eliminar del carrito */
         .btn-remove {
             background-color: #ff4d4d;
             color: white;
             border: none;
             border-radius: 5px;
-            width: 25px;
-            height: 25px;
+            width: 30px;
+            height: 30px;
             cursor: pointer;
             font-weight: bold;
             display: flex;
@@ -356,7 +386,8 @@
 
         @media (max-width: 768px) {
             header { flex-direction: column; gap: 15px; }
-            .hero h1 { font-size: 2.5rem; }
+            .hero h1 { font-size: 4rem; }
+            .hero .subtitle { font-size: 1.2rem; }
             .hero p { font-size: 1.2rem; }
         }
     </style>
@@ -382,7 +413,8 @@
 
     <!-- Sección Hero / Slogan -->
     <section id="hero" class="hero">
-        <h1>Kairo since 2026</h1>
+        <h1>KAIRO</h1>
+        <h2 class="subtitle">since 2026</h2>
         <p>La combinación perfecta de estilo y comodidad para tus días de gimnasio y playa. ¡Encuentra tu pieza favorita!</p>
     </section>
 
@@ -390,30 +422,96 @@
     <section id="productos">
         <h2 class="section-title">Nuestra Colección</h2>
         <div class="products-grid">
+            
+            <!-- Producto 1 -->
             <div class="product-card">
                 <div class="product-image">Foto Traje de Baño</div>
                 <h3>Set Traje de Baño 2 Piezas</h3>
                 <div class="price">$25.00</div>
-                <button class="btn-add" onclick="addToCart('Set Traje de Baño 2 Piezas', 25)">Añadir al Carrito</button>
+                <div class="product-options">
+                    <select id="talla-1">
+                        <option value="" disabled selected>Talla</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                    </select>
+                    <select id="color-1">
+                        <option value="" disabled selected>Color</option>
+                        <option value="Negro">Negro</option>
+                        <option value="Rosado">Rosado</option>
+                        <option value="Celeste">Celeste</option>
+                    </select>
+                </div>
+                <button class="btn-add" onclick="addToCartWithOptions('Set Traje de Baño 2 Piezas', 25, 'talla-1', 'color-1')">Añadir al Carrito</button>
             </div>
+
+            <!-- Producto 2 -->
             <div class="product-card">
                 <div class="product-image">Foto Top Deportivo</div>
                 <h3>Top Deportivo Seamless</h3>
                 <div class="price">$15.00</div>
-                <button class="btn-add" onclick="addToCart('Top Deportivo Seamless', 15)">Añadir al Carrito</button>
+                <div class="product-options">
+                    <select id="talla-2">
+                        <option value="" disabled selected>Talla</option>
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                    </select>
+                    <select id="color-2">
+                        <option value="" disabled selected>Color</option>
+                        <option value="Blanco">Blanco</option>
+                        <option value="Lila">Lila</option>
+                        <option value="Gris">Gris</option>
+                    </select>
+                </div>
+                <button class="btn-add" onclick="addToCartWithOptions('Top Deportivo Seamless', 15, 'talla-2', 'color-2')">Añadir al Carrito</button>
             </div>
+
+            <!-- Producto 3 -->
             <div class="product-card">
                 <div class="product-image">Foto Leggings</div>
                 <h3>Leggings Push Up</h3>
                 <div class="price">$20.00</div>
-                <button class="btn-add" onclick="addToCart('Leggings Push Up', 20)">Añadir al Carrito</button>
+                <div class="product-options">
+                    <select id="talla-3">
+                        <option value="" disabled selected>Talla</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <select id="color-3">
+                        <option value="" disabled selected>Color</option>
+                        <option value="Negro">Negro</option>
+                        <option value="Azul Marino">Azul Marino</option>
+                        <option value="Vino">Vino</option>
+                    </select>
+                </div>
+                <button class="btn-add" onclick="addToCartWithOptions('Leggings Push Up', 20, 'talla-3', 'color-3')">Añadir al Carrito</button>
             </div>
+
+            <!-- Producto 4 -->
             <div class="product-card">
                 <div class="product-image">Foto Enterizo Playa</div>
                 <h3>Traje de Baño Enterizo</h3>
                 <div class="price">$30.00</div>
-                <button class="btn-add" onclick="addToCart('Traje de Baño Enterizo', 30)">Añadir al Carrito</button>
+                <div class="product-options">
+                    <select id="talla-4">
+                        <option value="" disabled selected>Talla</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                    </select>
+                    <select id="color-4">
+                        <option value="" disabled selected>Color</option>
+                        <option value="Rojo">Rojo</option>
+                        <option value="Estampado Floral">Estampado Floral</option>
+                        <option value="Amarillo">Amarillo</option>
+                    </select>
+                </div>
+                <button class="btn-add" onclick="addToCartWithOptions('Traje de Baño Enterizo', 30, 'talla-4', 'color-4')">Añadir al Carrito</button>
             </div>
+
         </div>
     </section>
 
@@ -466,16 +564,32 @@
     <script>
         let cart = [];
 
-        function addToCart(productName, price) {
-            cart.push({ name: productName, price: price });
+        // Nueva función de añadir al carrito que lee la talla y el color
+        function addToCartWithOptions(productName, price, selectTallaId, selectColorId) {
+            const talla = document.getElementById(selectTallaId).value;
+            const color = document.getElementById(selectColorId).value;
+
+            // Validación: Asegurarse de que eligió ambas cosas
+            if (!talla || !color) {
+                alert("⚠️ Por favor, selecciona una talla y un color antes de añadir al carrito.");
+                return;
+            }
+
+            // Crear el nombre completo del producto con sus opciones
+            const productNameWithOptions = `${productName} (Color: ${color}, Talla: ${talla})`;
+
+            cart.push({ name: productNameWithOptions, price: price });
             updateCartUI();
             
             const cartIcon = document.querySelector('.cart-icon');
             cartIcon.style.transform = 'scale(1.2)';
             setTimeout(() => cartIcon.style.transform = 'scale(1)', 200);
+
+            // Reiniciar los selectores a su estado original después de agregar
+            document.getElementById(selectTallaId).value = "";
+            document.getElementById(selectColorId).value = "";
         }
 
-        // Nueva función para eliminar productos del carrito
         function removeFromCart(index) {
             cart.splice(index, 1);
             updateCartUI();
@@ -494,7 +608,6 @@
             cart.forEach((item, index) => {
                 total += item.price;
                 const li = document.createElement('li');
-                // Se actualizó el HTML interno para incluir el botón de eliminar
                 li.innerHTML = `
                     <div class="item-info">
                         <span class="item-name">${item.name}</span>
