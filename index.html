@@ -168,7 +168,7 @@
 
         .product-card {
             background-color: var(--color-white);
-            border: none; /* Quitamos el borde para un look más limpio sobre los fondos */
+            border: none;
             border-radius: 15px;
             padding: 20px;
             text-align: center;
@@ -529,33 +529,36 @@
                 <button class="btn-add" onclick="addToCartWithOptions('Conjunto Deportivo Musera', 35, 'talla-musera', 'color-musera')">Añadir al Carrito</button>
             </div>
 
-            <!-- Producto 3 (Leggings Genérico) -->
+            <!-- Producto 3: Suéter Varsitiva -->
             <div class="product-card">
-                <img id="img-p4" class="main-product-img" src="https://via.placeholder.com/400x400/f0f0f0/afafaf?text=Foto+Leggings" alt="Leggings">
+                <img id="img-varsitiva-main" class="main-product-img" src="saco beige.jpg" alt="Suéter Deportivo Varsitiva">
                 
                 <div class="thumbnail-container">
-                    <img class="thumb-img" src="https://via.placeholder.com/400x400/f0f0f0/afafaf?text=1" onclick="document.getElementById('img-p4').src=this.src">
-                    <img class="thumb-img" src="https://via.placeholder.com/400x400/f0f0f0/afafaf?text=2" onclick="document.getElementById('img-p4').src=this.src">
+                    <img class="thumb-img" src="saco beige.jpg" onclick="document.getElementById('color-varsitiva').value='Beige'; actualizarFotosVarsitiva();" title="Beige">
+                    <img class="thumb-img" src="saco ammrillo.jpg" onclick="document.getElementById('color-varsitiva').value='Amarillo'; actualizarFotosVarsitiva();" title="Amarillo">
+                    <img class="thumb-img" src="saco rosado.jpg" onclick="document.getElementById('color-varsitiva').value='Fucsia'; actualizarFotosVarsitiva();" title="Fucsia">
+                    <img class="thumb-img" src="saco azul.jpg" onclick="document.getElementById('color-varsitiva').value='Azul'; actualizarFotosVarsitiva();" title="Azul">
                 </div>
 
-                <h3>Leggings Push Up</h3>
-                <p class="description">Nuestros clásicos leggings push up para máxima confianza en cada movimiento.</p>
-                <div class="price">$20.00</div>
+                <h3>Suéter Deportivo Varsitiva</h3>
+                <p class="description">Aptos para cuando terminas de entrenar o para llegar al gimnasio con estilo.</p>
+                <div class="price">$25.00</div>
                 <div class="product-options">
-                    <select id="talla-4" onchange="actualizarImagenDinamica('img-p4', 'p4', 'color-4', 'talla-4')">
+                    <select id="talla-varsitiva">
                         <option value="" disabled selected>Talla</option>
                         <option value="S">S</option>
                         <option value="M">M</option>
                         <option value="L">L</option>
                     </select>
-                    <select id="color-4" onchange="actualizarImagenDinamica('img-p4', 'p4', 'color-4', 'talla-4')">
+                    <select id="color-varsitiva" onchange="actualizarFotosVarsitiva()">
                         <option value="" disabled selected>Color</option>
-                        <option value="Negro">Negro</option>
+                        <option value="Beige">Beige</option>
+                        <option value="Amarillo">Amarillo</option>
+                        <option value="Fucsia">Fucsia</option>
                         <option value="Azul">Azul</option>
-                        <option value="Vino">Vino</option>
                     </select>
                 </div>
-                <button class="btn-add" onclick="addToCartWithOptions('Leggings Push Up', 20, 'talla-4', 'color-4')">Añadir al Carrito</button>
+                <button class="btn-add" onclick="addToCartWithOptions('Suéter Deportivo Varsitiva', 25, 'talla-varsitiva', 'color-varsitiva')">Añadir al Carrito</button>
             </div>
 
         </div>
@@ -704,6 +707,17 @@
                 document.getElementById('thumb-mus-2').src = `img musera 2 ${colorLimpio}.jpg`;
                 document.getElementById('thumb-mus-3').src = `img musera 3 ${colorLimpio}.jpg`;
             }
+        }
+
+        // NUEVA FUNCIÓN ESPECIAL PARA EL SUÉTER VARSITIVA
+        function actualizarFotosVarsitiva() {
+            const colorSelect = document.getElementById('color-varsitiva').value;
+            const imgMain = document.getElementById('img-varsitiva-main');
+            
+            if (colorSelect === 'Amarillo') imgMain.src = 'saco ammrillo.jpg';
+            else if (colorSelect === 'Beige') imgMain.src = 'saco beige.jpg';
+            else if (colorSelect === 'Fucsia') imgMain.src = 'saco rosado.jpg';
+            else if (colorSelect === 'Azul') imgMain.src = 'saco azul.jpg';
         }
 
         function actualizarImagenDinamica(idImagenElemento, prefijoProducto, idSelectorColor, idSelectorTalla) {
