@@ -147,7 +147,7 @@
             background-image: url('fondo deporte.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Efecto Parallax */
+            background-attachment: fixed;
             padding: 60px 0;
         }
 
@@ -155,7 +155,7 @@
             background-image: url('fondo playa.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Efecto Parallax */
+            background-attachment: fixed;
             padding: 60px 0;
         }
 
@@ -573,37 +573,40 @@
         </div>
         <div class="products-grid">
             
-            <!-- Producto 4 (Traje de Baño 2 Piezas) -->
+            <!-- NUEVO PRODUCTO 4: Traje de Baño Swimvcay -->
             <div class="product-card">
-                <img id="img-p1" class="main-product-img" src="https://via.placeholder.com/400x400/f0f0f0/afafaf?text=Foto+Traje+Baño" alt="Set Traje de Baño">
+                <!-- Imagen por defecto en rosado -->
+                <img id="img-swimvcay-main" class="main-product-img" src="tdb rosado img 1.jpg" alt="Traje de Baño Swimvcay">
                 
                 <div class="thumbnail-container">
-                    <img class="thumb-img" src="https://via.placeholder.com/400x400/f0f0f0/afafaf?text=1" onclick="document.getElementById('img-p1').src=this.src">
-                    <img class="thumb-img" src="https://via.placeholder.com/400x400/f0f0f0/afafaf?text=2" onclick="document.getElementById('img-p1').src=this.src">
+                    <img id="thumb-swim-1" class="thumb-img" src="tdb rosado img 1.jpg" onclick="document.getElementById('img-swimvcay-main').src=this.src" title="Vista 1">
+                    <img id="thumb-swim-2" class="thumb-img" src="tdb rosado img 2.jpg" onclick="document.getElementById('img-swimvcay-main').src=this.src" title="Vista 2">
                 </div>
 
-                <h3>Set Traje de Baño 2 Piezas</h3>
-                <p class="description">Ideal para disfrutar del sol con un ajuste cómodo y moderno.</p>
+                <h3>Traje de Baño Swimvcay</h3>
+                <p class="description">Colores dinámicos que vibran bajo el sol. Diseños únicos hechos para destacar con tejido artesanal y texturas increíbles.</p>
                 <div class="price">$25.00</div>
                 
                 <div class="product-options">
-                    <select id="talla-1" onchange="actualizarImagenDinamica('img-p1', 'p1', 'color-1', 'talla-1')">
+                    <select id="talla-swimvcay">
                         <option value="" disabled selected>Talla</option>
                         <option value="S">S</option>
                         <option value="M">M</option>
                         <option value="L">L</option>
                     </select>
-                    <select id="color-1" onchange="actualizarImagenDinamica('img-p1', 'p1', 'color-1', 'talla-1')">
+                    <select id="color-swimvcay" onchange="actualizarFotosSwimvcay()">
                         <option value="" disabled selected>Color</option>
-                        <option value="Negro">Negro</option>
                         <option value="Rosado">Rosado</option>
-                        <option value="Celeste">Celeste</option>
+                        <option value="Marrón">Marrón</option>
+                        <option value="Azul">Azul</option>
+                        <option value="Fucsia">Fucsia</option>
+                        <option value="Morado">Morado</option>
                     </select>
                 </div>
-                <button class="btn-add" onclick="addToCartWithOptions('Set Traje Baño', 25, 'talla-1', 'color-1')">Añadir al Carrito</button>
+                <button class="btn-add" onclick="addToCartWithOptions('Traje de Baño Swimvcay', 25, 'talla-swimvcay', 'color-swimvcay')">Añadir al Carrito</button>
             </div>
 
-            <!-- Producto 5 (Enterizo) -->
+            <!-- Producto 5 (Enterizo Genérico) -->
             <div class="product-card">
                 <img id="img-p2" class="main-product-img" src="https://via.placeholder.com/400x400/f0f0f0/afafaf?text=Foto+Enterizo" alt="Enterizo">
                 
@@ -683,7 +686,6 @@
             const colorSelect = document.getElementById('color-aralina').value;
             if (colorSelect) {
                 const colorLimpio = colorSelect.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-                
                 document.getElementById('img-aralina-main').src = `img 1 ${colorLimpio}.jpg`;
                 document.getElementById('thumb-ara-1').src = `img 1 ${colorLimpio}.jpg`;
                 document.getElementById('thumb-ara-2').src = `img 2 ${colorLimpio}.jpg`;
@@ -693,10 +695,8 @@
 
         function actualizarFotosMusera() {
             const colorSelect = document.getElementById('color-musera').value;
-            
             if (colorSelect) {
                 let colorLimpio = "";
-                
                 if (colorSelect === "Rosado") colorLimpio = "rosado";
                 else if (colorSelect === "Marrón") colorLimpio = "marron";
                 else if (colorSelect === "Rosa Viejo") colorLimpio = "rviejo";
@@ -709,15 +709,31 @@
             }
         }
 
-        // NUEVA FUNCIÓN ESPECIAL PARA EL SUÉTER VARSITIVA
         function actualizarFotosVarsitiva() {
             const colorSelect = document.getElementById('color-varsitiva').value;
             const imgMain = document.getElementById('img-varsitiva-main');
             
             if (colorSelect === 'Amarillo') imgMain.src = 'saco ammrillo.jpg';
             else if (colorSelect === 'Beige') imgMain.src = 'saco beige.jpg';
-            else if (colorSelect === 'Fucsia') imgMain.src = 'saco rosado.jpg';
+            else if (colorSelect === 'Fucsia') imgMain.src = 'saco rosado.jpg'; // Tú indicaste la foto rosado para fucsia
             else if (colorSelect === 'Azul') imgMain.src = 'saco azul.jpg';
+        }
+
+        // NUEVA FUNCIÓN ESPECIAL PARA TRAJES DE BAÑO SWIMVCAY
+        function actualizarFotosSwimvcay() {
+            const colorSelect = document.getElementById('color-swimvcay').value;
+            if (colorSelect) {
+                let colorLimpio = "";
+                if (colorSelect === "Rosado") colorLimpio = "rosado";
+                else if (colorSelect === "Marrón") colorLimpio = "marron";
+                else if (colorSelect === "Azul") colorLimpio = "azul";
+                else if (colorSelect === "Fucsia") colorLimpio = "fucsia";
+                else if (colorSelect === "Morado") colorLimpio = "morado";
+
+                document.getElementById('img-swimvcay-main').src = `tdb ${colorLimpio} img 1.jpg`;
+                document.getElementById('thumb-swim-1').src = `tdb ${colorLimpio} img 1.jpg`;
+                document.getElementById('thumb-swim-2').src = `tdb ${colorLimpio} img 2.jpg`;
+            }
         }
 
         function actualizarImagenDinamica(idImagenElemento, prefijoProducto, idSelectorColor, idSelectorTalla) {
