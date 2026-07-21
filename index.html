@@ -53,6 +53,8 @@
             list-style: none;
             display: flex;
             gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         nav a {
@@ -121,7 +123,6 @@
             text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
         }
 
-        /* Títulos de sección con fondo semitransparente para que resalten */
         .section-title {
             text-align: center;
             margin: 0 auto 40px auto;
@@ -161,7 +162,8 @@
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 380px));
+            justify-content: center;
             gap: 30px;
             padding: 0 5%;
         }
@@ -271,7 +273,7 @@
 
         .aliados {
             background-color: var(--color-yellow);
-            padding: 50px 20px;
+            padding: 60px 20px;
             text-align: center;
         }
 
@@ -306,6 +308,108 @@
             color: var(--color-dark);
             font-size: 1.1rem;
             line-height: 1.5;
+        }
+
+        /* --- NUEVA SECCIÓN: CONÓCENOS --- */
+        .conocenos {
+            padding: 60px 5%;
+            background-color: var(--color-white);
+            text-align: center;
+        }
+
+        .conocenos .intro-text {
+            max-width: 900px;
+            margin: 0 auto 40px auto;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: var(--color-dark);
+        }
+
+        .mision-vision {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .mv-card {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 15px;
+            flex: 1;
+            min-width: 300px;
+            max-width: 450px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            text-align: left;
+        }
+
+        .mv-card h3 {
+            color: var(--color-pink);
+            margin-bottom: 15px;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+        }
+
+        .mv-card p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--color-dark);
+        }
+
+        /* --- NUEVA SECCIÓN: CONTÁCTANOS --- */
+        .contactanos {
+            padding: 60px 5%;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+
+        .contact-card {
+            background-color: var(--color-white);
+            max-width: 450px;
+            margin: 0 auto;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .profile-pic {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--color-pink);
+            background-color: #fff;
+        }
+
+        .contact-info {
+            width: 100%;
+        }
+
+        .contact-info a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            text-decoration: none;
+            color: var(--color-dark);
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+        }
+
+        .contact-info a:hover {
+            background-color: var(--color-pink);
+            color: var(--color-white);
+            transform: translateY(-2px);
         }
 
         footer {
@@ -440,6 +544,8 @@
                 <li><a href="#ropa-deportiva">Deportiva</a></li>
                 <li><a href="#trajes-de-bano">Trajes de Baño</a></li>
                 <li><a href="#aliados">Aliados</a></li>
+                <li><a href="#conocenos">Conócenos</a></li>
+                <li><a href="#contactanos">Contacto</a></li>
             </ul>
         </nav>
         <div class="cart-icon" onclick="toggleCart()">
@@ -573,9 +679,8 @@
         </div>
         <div class="products-grid">
             
-            <!-- NUEVO PRODUCTO 4: Traje de Baño Swimvcay -->
+            <!-- Producto 4: Traje de Baño Swimvcay -->
             <div class="product-card">
-                <!-- Imagen por defecto en rosado -->
                 <img id="img-swimvcay-main" class="main-product-img" src="tdb rosado img 1.jpg" alt="Traje de Baño Swimvcay">
                 
                 <div class="thumbnail-container">
@@ -606,34 +711,38 @@
                 <button class="btn-add" onclick="addToCartWithOptions('Traje de Baño Swimvcay', 25, 'talla-swimvcay', 'color-swimvcay')">Añadir al Carrito</button>
             </div>
 
-            <!-- Producto 5 (Enterizo Genérico) -->
+            <!-- Producto 5: Traje de Baño Aralina -->
             <div class="product-card">
-                <img id="img-p2" class="main-product-img" src="https://via.placeholder.com/400x400/f0f0f0/afafaf?text=Foto+Enterizo" alt="Enterizo">
+                <img id="img-aralina-tdb-main" class="main-product-img" src="tdb aralina azul 1.jpg" alt="Traje de Baño Aralina">
                 
                 <div class="thumbnail-container">
-                    <img class="thumb-img" src="https://via.placeholder.com/400x400/f0f0f0/afafaf?text=1" onclick="document.getElementById('img-p2').src=this.src">
-                    <img class="thumb-img" src="https://via.placeholder.com/400x400/f0f0f0/afafaf?text=2" onclick="document.getElementById('img-p2').src=this.src">
+                    <img id="thumb-ara-tdb-1" class="thumb-img" src="tdb aralina azul 1.jpg" onclick="document.getElementById('img-aralina-tdb-main').src=this.src" title="Vista 1">
+                    <img id="thumb-ara-tdb-2" class="thumb-img" src="tdb aralina azul 2.jpg" onclick="document.getElementById('img-aralina-tdb-main').src=this.src" title="Vista 2">
                 </div>
 
-                <h3>Traje de Baño Enterizo</h3>
-                <p class="description">Un diseño elegante de una sola pieza, perfecto para la piscina o la playa.</p>
-                <div class="price">$30.00</div>
+                <h3>Traje de Baño Aralina</h3>
+                <p class="description">Confeccionados con la mejor calidad y estilo para tus días de playa con colores joviales y de gran presencia.</p>
+                <div class="price">$25.00</div>
+                
                 <div class="product-options">
-                    <select id="talla-2" onchange="actualizarImagenDinamica('img-p2', 'p2', 'color-2', 'talla-2')">
+                    <select id="talla-aralina-tdb">
                         <option value="" disabled selected>Talla</option>
                         <option value="S">S</option>
                         <option value="M">M</option>
                         <option value="L">L</option>
                     </select>
-                    <select id="color-2" onchange="actualizarImagenDinamica('img-p2', 'p2', 'color-2', 'talla-2')">
+                    <select id="color-aralina-tdb" onchange="actualizarFotosAralinaTdb()">
                         <option value="" disabled selected>Color</option>
-                        <option value="Rojo">Rojo</option>
-                        <option value="Floral">Floral</option>
-                        <option value="Amarillo">Amarillo</option>
+                        <option value="Azul">Azul</option>
+                        <option value="Rosado">Rosado</option>
+                        <option value="Rosado Claro">Rosado Claro</option>
+                        <option value="Marino">Marino</option>
+                        <option value="Blanco">Blanco</option>
                     </select>
                 </div>
-                <button class="btn-add" onclick="addToCartWithOptions('Enterizo Playa', 30, 'talla-2', 'color-2')">Añadir al Carrito</button>
+                <button class="btn-add" onclick="addToCartWithOptions('Traje de Baño Aralina', 25, 'talla-aralina-tdb', 'color-aralina-tdb')">Añadir al Carrito</button>
             </div>
+
         </div>
     </section>
 
@@ -656,6 +765,47 @@
             <div class="aliado-card">
                 <h3>Aralina by Shein</h3>
                 <p>Mezcla un estilo casual chic, romántico y vacacional. Utiliza mucho el poliéster y la viscosa para crear vestidos y trajes de baño fluidos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SECCIÓN: CONÓCENOS                         -->
+    <!-- ========================================== -->
+    <section id="conocenos" class="conocenos">
+        <h2 class="section-title">Conócenos</h2>
+        <p class="intro-text">
+            Somos Kairo, un espacio nacido en el 2026 diseñado para conectar tu pasión por el movimiento y el sol con las mejores opciones de moda. Más que una tienda, somos tus aliados en la búsqueda de la prenda perfecta. Nos dedicamos a seleccionar y ofrecer trajes de baño y ropa deportiva de marcas aliadas que comparten nuestra visión de calidad, estilo y confort. Trabajamos de la mano con marcas destacadas como Musera y Aralina, trayendo directamente a ti colecciones que combinan las últimas tendencias con el alto rendimiento que necesitas.
+        </p>
+        <div class="mision-vision">
+            <div class="mv-card">
+                <h3>Nuestra Misión</h3>
+                <p>Conectar tu estilo de vida activo con las mejores marcas de ropa deportiva y trajes de baño, ofreciéndote una selección cuidada y un servicio de compra cercano, fácil y personalizado que te haga sentir segura, cómoda y lista para cualquier desafío.</p>
+            </div>
+            <div class="mv-card">
+                <h3>Nuestra Visión</h3>
+                <p>Convertirnos en el destino digital favorito para quienes buscan moda deportiva y de playa, proyectando nuestro crecimiento hacia la promoción de alianzas con marcas que apuesten por el diseño sostenible, el bienestar integral y el respeto por nuestro entorno.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SECCIÓN: CONTÁCTANOS                       -->
+    <!-- ========================================== -->
+    <section id="contactanos" class="contactanos">
+        <h2 class="section-title">Contáctanos</h2>
+        <div class="contact-card">
+            <img src="logo.jpg" alt="Perfil Kairo" class="profile-pic">
+            <div class="contact-info">
+                <a href="https://wa.me/584127776502" target="_blank">
+                    📱 WhatsApp: +58 412-7776502
+                </a>
+                <a href="mailto:sofiaarl001@gmail.com">
+                    ✉️ sofiaarl001@gmail.com
+                </a>
+                <a href="https://instagram.com/kairo_vall" target="_blank">
+                    📸 Instagram: @kairo_vall
+                </a>
             </div>
         </div>
     </section>
@@ -715,11 +865,10 @@
             
             if (colorSelect === 'Amarillo') imgMain.src = 'saco ammrillo.jpg';
             else if (colorSelect === 'Beige') imgMain.src = 'saco beige.jpg';
-            else if (colorSelect === 'Fucsia') imgMain.src = 'saco rosado.jpg'; // Tú indicaste la foto rosado para fucsia
+            else if (colorSelect === 'Fucsia') imgMain.src = 'saco rosado.jpg';
             else if (colorSelect === 'Azul') imgMain.src = 'saco azul.jpg';
         }
 
-        // NUEVA FUNCIÓN ESPECIAL PARA TRAJES DE BAÑO SWIMVCAY
         function actualizarFotosSwimvcay() {
             const colorSelect = document.getElementById('color-swimvcay').value;
             if (colorSelect) {
@@ -736,15 +885,19 @@
             }
         }
 
-        function actualizarImagenDinamica(idImagenElemento, prefijoProducto, idSelectorColor, idSelectorTalla) {
-            const colorSeleccionado = document.getElementById(idSelectorColor).value;
-            const tallaSeleccionada = document.getElementById(idSelectorTalla).value;
+        function actualizarFotosAralinaTdb() {
+            const colorSelect = document.getElementById('color-aralina-tdb').value;
+            if (colorSelect) {
+                let colorLimpio = "";
+                if (colorSelect === "Azul") colorLimpio = "azul";
+                else if (colorSelect === "Rosado") colorLimpio = "rosado";
+                else if (colorSelect === "Rosado Claro") colorLimpio = "pink";
+                else if (colorSelect === "Marino") colorLimpio = "marino";
+                else if (colorSelect === "Blanco") colorLimpio = "blanco";
 
-            if(colorSeleccionado && tallaSeleccionada) {
-                const colorFormateado = colorSeleccionado.toLowerCase().replace(/\s+/g, '-');
-                const tallaFormateada = tallaSeleccionada.toLowerCase();
-                const nuevoNombreImagen = `${prefijoProducto}-${colorFormateado}-${tallaFormateada}.jpg`;
-                document.getElementById(idImagenElemento).src = nuevoNombreImagen;
+                document.getElementById('img-aralina-tdb-main').src = `tdb aralina ${colorLimpio} 1.jpg`;
+                document.getElementById('thumb-ara-tdb-1').src = `tdb aralina ${colorLimpio} 1.jpg`;
+                document.getElementById('thumb-ara-tdb-2').src = `tdb aralina ${colorLimpio} 2.jpg`;
             }
         }
 
