@@ -59,7 +59,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transform: scale(1.15); /* Oculta el borde rosado */
+            transform: scale(1.15);
         }
 
         nav ul {
@@ -134,17 +134,17 @@
             text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
         }
 
-        /* --- TÍTULOS SIN RECUADRO BLANCO --- */
+        /* --- TÍTULOS DE SECCIÓN: BLANCOS, SIN BORDE Y SIN SOMBRA --- */
         .section-title {
             text-align: center;
             margin: 0 auto 40px auto;
             font-size: 3rem;
-            color: var(--color-white); /* Texto blanco para contrastar */
+            color: var(--color-white); 
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 2px;
-            /* Sombra oscura para que se lea perfecto sobre los fondos */
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            background-color: transparent;
+            text-shadow: none; 
             display: inline-block;
         }
 
@@ -281,7 +281,7 @@
             background-color: var(--color-purple);
         }
 
-        /* --- SECCIÓN CONÓCENOS --- */
+        /* --- SECCIÓN CONÓCENOS (MISIÓN Y VISIÓN) --- */
         .conocenos-section {
             background-color: var(--color-white);
             padding: 70px 20px;
@@ -301,7 +301,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transform: scale(1.15); /* Esto quita el borde rosado y llena el círculo */
+            transform: scale(1.15); /* Quita el borde rosado y llena el círculo */
         }
 
         .conocenos-section h2 {
@@ -310,40 +310,34 @@
             margin-bottom: 20px;
         }
 
-        .conocenos-section p {
-            font-size: 1.2rem;
-            max-width: 800px;
+        .mision-vision-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            max-width: 900px;
             margin: 0 auto;
+        }
+
+        .mv-box {
+            flex: 1;
+            min-width: 300px;
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .mv-box h3 {
+            color: var(--color-dark);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .mv-box p {
+            font-size: 1.1rem;
             color: var(--color-dark);
             line-height: 1.6;
-        }
-
-        /* --- SECCIÓN CONTÁCTANOS --- */
-        .contactanos-section {
-            background-color: var(--color-dark);
-            color: var(--color-white);
-            padding: 70px 20px;
-            text-align: center;
-        }
-
-        .contactanos-section h2 {
-            color: var(--color-yellow);
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .contactanos-section p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 30px auto;
-            line-height: 1.6;
-        }
-        
-        .contact-btn {
-            width: auto;
-            padding: 15px 40px;
-            font-size: 1.2rem;
-            display: inline-block;
         }
 
         /* --- SECCIÓN ALIADOS --- */
@@ -384,6 +378,34 @@
             color: var(--color-dark);
             font-size: 1.1rem;
             line-height: 1.5;
+        }
+
+        /* --- SECCIÓN CONTÁCTANOS --- */
+        .contactanos-section {
+            background-color: var(--color-dark);
+            color: var(--color-white);
+            padding: 70px 20px;
+            text-align: center;
+        }
+
+        .contactanos-section h2 {
+            color: var(--color-yellow);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .contactanos-section p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            line-height: 1.6;
+        }
+        
+        .contact-btn {
+            width: auto;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            display: inline-block;
         }
 
         footer {
@@ -721,15 +743,27 @@
     </section>
 
     <!-- ========================================== -->
-    <!-- SECCIÓN CONÓCENOS                          -->
+    <!-- SECCIÓN CONÓCENOS (MISIÓN Y VISIÓN)        -->
     <!-- ========================================== -->
     <section id="conocenos" class="conocenos-section">
-        <!-- Logo ajustado, circular y sin borde -->
+        <!-- Logo circular perfecto y sin borde -->
         <div class="logo-conocenos">
             <img src="logo.jpg" alt="Logo Kairo">
         </div>
+        
         <h2>Conócenos</h2>
-        <p>Somos Kairo, una marca dedicada a brindarte la mejor combinación de estilo y rendimiento. Nuestros diseños están pensados para que te sientas segura, cómoda y a la moda tanto en tus intensas rutinas de ejercicio como en tus días de relajación en la playa.</p>
+        
+        <div class="mision-vision-container">
+            <div class="mv-box">
+                <h3>Nuestra Misión</h3>
+                <p>Ofrecer ropa deportiva y trajes de baño de alta calidad, combinando confort y un estilo sostenible. Nuestro objetivo es acompañarte en tu día a día, brindándote piezas funcionales y con diseños exclusivos que realcen tu confianza tanto en el gimnasio como en la playa.</p>
+            </div>
+            
+            <div class="mv-box">
+                <h3>Nuestra Visión</h3>
+                <p>Ser reconocidos en toda Venezuela como la marca líder en indumentaria deportiva y moda playera, destacándonos por la innovación de nuestros diseños y manteniendo un fuerte compromiso con el estilo consciente y moderno de nuestra comunidad.</p>
+            </div>
+        </div>
     </section>
 
     <!-- Sección Aliados -->
