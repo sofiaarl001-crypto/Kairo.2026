@@ -44,24 +44,22 @@
             z-index: 1000;
         }
 
-        /* --- LOGO AJUSTADO A CÍRCULO PERFECTO Y SIN BORDE --- */
+        /* --- LOGO DEL ENCABEZADO --- */
         .logo-container {
             width: 75px; 
             height: 75px;
             border-radius: 50%;
-            overflow: hidden; /* Esto corta cualquier cosa que salga del círculo */
+            overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
-            border: none;
-            background-color: transparent;
         }
 
         .logo-container img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Esto asegura que el logo llene todo el círculo */
-            transform: scale(1.15); /* Pequeño zoom para esconder el borde rosado de la foto original */
+            object-fit: cover;
+            transform: scale(1.15); /* Oculta el borde rosado */
         }
 
         nav ul {
@@ -136,19 +134,18 @@
             text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
         }
 
+        /* --- TÍTULOS SIN RECUADRO BLANCO --- */
         .section-title {
             text-align: center;
             margin: 0 auto 40px auto;
-            font-size: 2.5rem;
-            color: var(--color-pink);
+            font-size: 3rem;
+            color: var(--color-white); /* Texto blanco para contrastar */
             font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            background-color: rgba(255, 255, 255, 0.9);
+            letter-spacing: 2px;
+            /* Sombra oscura para que se lea perfecto sobre los fondos */
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
             display: inline-block;
-            padding: 10px 30px;
-            border-radius: 30px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
         .section-header-container {
@@ -158,7 +155,6 @@
 
         /* --- FONDOS DE SECCIONES CON TINTES DE COLOR --- */
         #ropa-deportiva {
-            /* Tinte fucsia claro semi-transparente sobre la imagen de fondo */
             background-image: linear-gradient(rgba(255, 140, 200, 0.7), rgba(255, 140, 200, 0.7)), url('fondo deporte.jpg');
             background-size: cover;
             background-position: center;
@@ -167,7 +163,6 @@
         }
 
         #trajes-de-bano {
-            /* Tinte amarillo claro semi-transparente sobre la imagen de fondo */
             background-image: linear-gradient(rgba(255, 245, 160, 0.75), rgba(255, 245, 160, 0.75)), url('fondo playa.jpg');
             background-size: cover;
             background-position: center;
@@ -286,6 +281,72 @@
             background-color: var(--color-purple);
         }
 
+        /* --- SECCIÓN CONÓCENOS --- */
+        .conocenos-section {
+            background-color: var(--color-white);
+            padding: 70px 20px;
+            text-align: center;
+        }
+
+        .logo-conocenos {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin: 0 auto 25px auto;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .logo-conocenos img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.15); /* Esto quita el borde rosado y llena el círculo */
+        }
+
+        .conocenos-section h2 {
+            color: var(--color-pink);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .conocenos-section p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--color-dark);
+            line-height: 1.6;
+        }
+
+        /* --- SECCIÓN CONTÁCTANOS --- */
+        .contactanos-section {
+            background-color: var(--color-dark);
+            color: var(--color-white);
+            padding: 70px 20px;
+            text-align: center;
+        }
+
+        .contactanos-section h2 {
+            color: var(--color-yellow);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .contactanos-section p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            line-height: 1.6;
+        }
+        
+        .contact-btn {
+            width: auto;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            display: inline-block;
+        }
+
+        /* --- SECCIÓN ALIADOS --- */
         .aliados {
             background-color: var(--color-yellow);
             padding: 50px 20px;
@@ -329,17 +390,18 @@
             background-color: var(--color-dark);
             color: var(--color-white);
             text-align: center;
-            padding: 40px 20px;
+            padding: 30px 20px 40px 20px;
         }
 
         footer p {
-            margin: 10px 0;
+            margin: 5px 0;
             font-size: 1.2rem;
         }
 
         footer .highlight {
             color: var(--color-yellow);
             font-weight: bold;
+            margin-bottom: 10px;
         }
 
         #cart-modal {
@@ -456,7 +518,8 @@
             <ul>
                 <li><a href="#ropa-deportiva">Deportiva</a></li>
                 <li><a href="#trajes-de-bano">Trajes de Baño</a></li>
-                <li><a href="#aliados">Aliados</a></li>
+                <li><a href="#conocenos">Conócenos</a></li>
+                <li><a href="#contactanos">Contáctanos</a></li>
             </ul>
         </nav>
         <div class="cart-icon" onclick="toggleCart()">
@@ -657,6 +720,18 @@
         </div>
     </section>
 
+    <!-- ========================================== -->
+    <!-- SECCIÓN CONÓCENOS                          -->
+    <!-- ========================================== -->
+    <section id="conocenos" class="conocenos-section">
+        <!-- Logo ajustado, circular y sin borde -->
+        <div class="logo-conocenos">
+            <img src="logo.jpg" alt="Logo Kairo">
+        </div>
+        <h2>Conócenos</h2>
+        <p>Somos Kairo, una marca dedicada a brindarte la mejor combinación de estilo y rendimiento. Nuestros diseños están pensados para que te sientas segura, cómoda y a la moda tanto en tus intensas rutinas de ejercicio como en tus días de relajación en la playa.</p>
+    </section>
+
     <!-- Sección Aliados -->
     <section id="aliados" class="aliados">
         <h2>Nuestros Aliados</h2>
@@ -678,6 +753,15 @@
                 <p>Mezcla un estilo casual chic, romántico y vacacional. Utiliza mucho el poliéster y la viscosa para crear vestidos y trajes de baño fluidos.</p>
             </div>
         </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SECCIÓN CONTÁCTANOS                        -->
+    <!-- ========================================== -->
+    <section id="contactanos" class="contactanos-section">
+        <h2>Contáctanos</h2>
+        <p>¿Tienes dudas con tu talla, deseas hacer un pedido personalizado o quieres conocer más detalles sobre envíos? Estamos a un clic de distancia para asesorarte.</p>
+        <button class="btn-whatsapp contact-btn" onclick="window.open('https://wa.me/584127776502', '_blank')">Escríbenos por WhatsApp</button>
     </section>
 
     <!-- Pie de Página -->
