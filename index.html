@@ -44,17 +44,30 @@
             z-index: 1000;
         }
 
+        /* --- LOGO AJUSTADO A CÍRCULO PERFECTO Y SIN BORDE --- */
+        .logo-container {
+            width: 75px; 
+            height: 75px;
+            border-radius: 50%;
+            overflow: hidden; /* Esto corta cualquier cosa que salga del círculo */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            background-color: transparent;
+        }
+
         .logo-container img {
-            height: 80px; 
-            object-fit: contain;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Esto asegura que el logo llene todo el círculo */
+            transform: scale(1.15); /* Pequeño zoom para esconder el borde rosado de la foto original */
         }
 
         nav ul {
             list-style: none;
             display: flex;
             gap: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
         }
 
         nav a {
@@ -131,7 +144,7 @@
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 1px;
-            background-color: rgba(255, 255, 255, 0.85);
+            background-color: rgba(255, 255, 255, 0.9);
             display: inline-block;
             padding: 10px 30px;
             border-radius: 30px;
@@ -143,9 +156,10 @@
             margin-bottom: 10px;
         }
 
-        /* --- FONDOS DE SECCIONES --- */
+        /* --- FONDOS DE SECCIONES CON TINTES DE COLOR --- */
         #ropa-deportiva {
-            background-image: url('fondo deporte.jpg');
+            /* Tinte fucsia claro semi-transparente sobre la imagen de fondo */
+            background-image: linear-gradient(rgba(255, 140, 200, 0.7), rgba(255, 140, 200, 0.7)), url('fondo deporte.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -153,7 +167,8 @@
         }
 
         #trajes-de-bano {
-            background-image: url('fondo playa.jpg');
+            /* Tinte amarillo claro semi-transparente sobre la imagen de fondo */
+            background-image: linear-gradient(rgba(255, 245, 160, 0.75), rgba(255, 245, 160, 0.75)), url('fondo playa.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -273,7 +288,7 @@
 
         .aliados {
             background-color: var(--color-yellow);
-            padding: 60px 20px;
+            padding: 50px 20px;
             text-align: center;
         }
 
@@ -308,108 +323,6 @@
             color: var(--color-dark);
             font-size: 1.1rem;
             line-height: 1.5;
-        }
-
-        /* --- NUEVA SECCIÓN: CONÓCENOS --- */
-        .conocenos {
-            padding: 60px 5%;
-            background-color: var(--color-white);
-            text-align: center;
-        }
-
-        .conocenos .intro-text {
-            max-width: 900px;
-            margin: 0 auto 40px auto;
-            font-size: 1.2rem;
-            line-height: 1.6;
-            color: var(--color-dark);
-        }
-
-        .mision-vision {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            justify-content: center;
-        }
-
-        .mv-card {
-            background-color: #f9f9f9;
-            padding: 30px;
-            border-radius: 15px;
-            flex: 1;
-            min-width: 300px;
-            max-width: 450px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            text-align: left;
-        }
-
-        .mv-card h3 {
-            color: var(--color-pink);
-            margin-bottom: 15px;
-            font-size: 1.6rem;
-            text-transform: uppercase;
-        }
-
-        .mv-card p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: var(--color-dark);
-        }
-
-        /* --- NUEVA SECCIÓN: CONTÁCTANOS --- */
-        .contactanos {
-            padding: 60px 5%;
-            background-color: #f0f0f0;
-            text-align: center;
-        }
-
-        .contact-card {
-            background-color: var(--color-white);
-            max-width: 450px;
-            margin: 0 auto;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .profile-pic {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid var(--color-pink);
-            background-color: #fff;
-        }
-
-        .contact-info {
-            width: 100%;
-        }
-
-        .contact-info a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background-color: #f9f9f9;
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            text-decoration: none;
-            color: var(--color-dark);
-            font-size: 1.2rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 1px solid #eee;
-        }
-
-        .contact-info a:hover {
-            background-color: var(--color-pink);
-            color: var(--color-white);
-            transform: translateY(-2px);
         }
 
         footer {
@@ -544,8 +457,6 @@
                 <li><a href="#ropa-deportiva">Deportiva</a></li>
                 <li><a href="#trajes-de-bano">Trajes de Baño</a></li>
                 <li><a href="#aliados">Aliados</a></li>
-                <li><a href="#conocenos">Conócenos</a></li>
-                <li><a href="#contactanos">Contacto</a></li>
             </ul>
         </nav>
         <div class="cart-icon" onclick="toggleCart()">
@@ -765,47 +676,6 @@
             <div class="aliado-card">
                 <h3>Aralina by Shein</h3>
                 <p>Mezcla un estilo casual chic, romántico y vacacional. Utiliza mucho el poliéster y la viscosa para crear vestidos y trajes de baño fluidos.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========================================== -->
-    <!-- SECCIÓN: CONÓCENOS                         -->
-    <!-- ========================================== -->
-    <section id="conocenos" class="conocenos">
-        <h2 class="section-title">Conócenos</h2>
-        <p class="intro-text">
-            Somos Kairo, un espacio nacido en el 2026 diseñado para conectar tu pasión por el movimiento y el sol con las mejores opciones de moda. Más que una tienda, somos tus aliados en la búsqueda de la prenda perfecta. Nos dedicamos a seleccionar y ofrecer trajes de baño y ropa deportiva de marcas aliadas que comparten nuestra visión de calidad, estilo y confort. Trabajamos de la mano con marcas destacadas como Musera y Aralina, trayendo directamente a ti colecciones que combinan las últimas tendencias con el alto rendimiento que necesitas.
-        </p>
-        <div class="mision-vision">
-            <div class="mv-card">
-                <h3>Nuestra Misión</h3>
-                <p>Conectar tu estilo de vida activo con las mejores marcas de ropa deportiva y trajes de baño, ofreciéndote una selección cuidada y un servicio de compra cercano, fácil y personalizado que te haga sentir segura, cómoda y lista para cualquier desafío.</p>
-            </div>
-            <div class="mv-card">
-                <h3>Nuestra Visión</h3>
-                <p>Convertirnos en el destino digital favorito para quienes buscan moda deportiva y de playa, proyectando nuestro crecimiento hacia la promoción de alianzas con marcas que apuesten por el diseño sostenible, el bienestar integral y el respeto por nuestro entorno.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========================================== -->
-    <!-- SECCIÓN: CONTÁCTANOS                       -->
-    <!-- ========================================== -->
-    <section id="contactanos" class="contactanos">
-        <h2 class="section-title">Contáctanos</h2>
-        <div class="contact-card">
-            <img src="logo.jpg" alt="Perfil Kairo" class="profile-pic">
-            <div class="contact-info">
-                <a href="https://wa.me/584127776502" target="_blank">
-                    📱 WhatsApp: +58 412-7776502
-                </a>
-                <a href="mailto:sofiaarl001@gmail.com">
-                    ✉️ sofiaarl001@gmail.com
-                </a>
-                <a href="https://instagram.com/kairo_vall" target="_blank">
-                    📸 Instagram: @kairo_vall
-                </a>
             </div>
         </div>
     </section>
