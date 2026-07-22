@@ -239,8 +239,9 @@
             flex-grow: 1; 
         }
 
+        /* --- PRECIOS EN AMARILLO OSCURO PARA LEERSE BIEN EN BLANCO --- */
         .product-card .price {
-            color: var(--color-pink);
+            color: #d6b000; 
             font-size: 1.6rem;
             font-weight: 700;
             margin-bottom: 15px;
@@ -264,9 +265,10 @@
             cursor: pointer;
         }
 
+        /* --- BOTÓN AÑADIR AL CARRITO EN AMARILLO --- */
         .btn-add {
-            background-color: var(--color-pink);
-            color: var(--color-white);
+            background-color: var(--color-yellow);
+            color: var(--color-dark);
             border: none;
             padding: 12px 20px;
             border-radius: 25px;
@@ -278,7 +280,7 @@
         }
 
         .btn-add:hover {
-            background-color: var(--color-purple);
+            background-color: #e6cb60;
         }
 
         /* --- SECCIÓN CONÓCENOS (MISIÓN Y VISIÓN) --- */
@@ -399,6 +401,15 @@
             max-width: 600px;
             margin: 0 auto 30px auto;
             line-height: 1.6;
+        }
+
+        .contact-info {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
         }
         
         .contact-btn {
@@ -671,7 +682,8 @@
     <!-- ========================================== -->
     <section id="trajes-de-bano">
         <div class="section-header-container">
-            <h2 class="section-title">Trajes de Baño</h2>
+            <!-- Título de Trajes de Baño en color Negro sin sombra -->
+            <h2 class="section-title" style="color: #000000; text-shadow: none;">Trajes de Baño</h2>
         </div>
         <div class="products-grid">
             
@@ -790,11 +802,18 @@
     </section>
 
     <!-- ========================================== -->
-    <!-- SECCIÓN CONTÁCTANOS                        -->
+    <!-- SECCIÓN CONTÁCTANOS CON CORREO E IG        -->
     <!-- ========================================== -->
     <section id="contactanos" class="contactanos-section">
         <h2>Contáctanos</h2>
         <p>¿Tienes dudas con tu talla, deseas hacer un pedido personalizado o quieres conocer más detalles sobre envíos? Estamos a un clic de distancia para asesorarte.</p>
+        
+        <!-- Aquí están los nuevos datos de contacto -->
+        <div class="contact-info">
+            <p>📧 <strong>Correo:</strong> sofiaarl001@gmail.com</p>
+            <p>📸 <strong>Instagram:</strong> <a href="https://instagram.com/kairo_vall" target="_blank" style="color: var(--color-yellow); text-decoration: none;">@kairo_vall</a></p>
+        </div>
+
         <button class="btn-whatsapp contact-btn" onclick="window.open('https://wa.me/584127776502', '_blank')">Escríbenos por WhatsApp</button>
     </section>
 
