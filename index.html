@@ -209,6 +209,7 @@
             justify-content: center;
             gap: 10px;
             margin-bottom: 15px;
+            min-height: 60px;
         }
 
         .thumb-img {
@@ -239,9 +240,9 @@
             flex-grow: 1; 
         }
 
-        /* --- PRECIOS EN AMARILLO OSCURO PARA LEERSE BIEN EN BLANCO --- */
+        /* --- PRECIOS EN FUCSIA POR DEFECTO (Para Ropa Deportiva) --- */
         .product-card .price {
-            color: #d6b000; 
+            color: var(--color-pink); 
             font-size: 1.6rem;
             font-weight: 700;
             margin-bottom: 15px;
@@ -265,10 +266,10 @@
             cursor: pointer;
         }
 
-        /* --- BOTÓN AÑADIR AL CARRITO EN AMARILLO --- */
+        /* --- BOTÓN AÑADIR AL CARRITO EN FUCSIA POR DEFECTO --- */
         .btn-add {
-            background-color: var(--color-yellow);
-            color: var(--color-dark);
+            background-color: var(--color-pink);
+            color: var(--color-white);
             border: none;
             padding: 12px 20px;
             border-radius: 25px;
@@ -280,6 +281,20 @@
         }
 
         .btn-add:hover {
+            background-color: var(--color-purple);
+        }
+
+        /* --- ESTILOS ESPECÍFICOS SOLO PARA LA SECCIÓN TRAJES DE BAÑO (Amarillo) --- */
+        #trajes-de-bano .product-card .price {
+            color: #d6b000; /* Amarillo oscuro */
+        }
+
+        #trajes-de-bano .btn-add {
+            background-color: var(--color-yellow);
+            color: var(--color-dark);
+        }
+
+        #trajes-de-bano .btn-add:hover {
             background-color: #e6cb60;
         }
 
@@ -682,7 +697,6 @@
     <!-- ========================================== -->
     <section id="trajes-de-bano">
         <div class="section-header-container">
-            <!-- Título de Trajes de Baño en color Negro sin sombra -->
             <h2 class="section-title" style="color: #000000; text-shadow: none;">Trajes de Baño</h2>
         </div>
         <div class="products-grid">
@@ -719,7 +733,7 @@
                 <button class="btn-add" onclick="addToCartWithOptions('Traje de Baño Swimvcay', 25, 'talla-swimvcay', 'color-swimvcay')">Añadir al Carrito</button>
             </div>
 
-            <!-- Producto 5: Traje de Baño Aralina -->
+            <!-- Producto 5: Traje de Baño Aralina (Colores Sólidos) -->
             <div class="product-card">
                 <img id="img-aralina-tdb-main" class="main-product-img" src="tdb aralina azul 1.jpg" alt="Traje de Baño Aralina">
                 
@@ -744,11 +758,44 @@
                         <option value="Azul">Azul</option>
                         <option value="Rosado">Rosado</option>
                         <option value="Rosado Claro">Rosado Claro</option>
-                        <option value="Marino">Marino</option>
+                        <option value="Azul Marino">Azul Marino</option>
                         <option value="Blanco">Blanco</option>
                     </select>
                 </div>
                 <button class="btn-add" onclick="addToCartWithOptions('Traje de Baño Aralina', 25, 'talla-aralina-tdb', 'color-aralina-tdb')">Añadir al Carrito</button>
+            </div>
+
+            <!-- Producto 6: Traje de Baño Aralina Estampado -->
+            <div class="product-card">
+                <img id="img-aralina-exp-main" class="main-product-img" src="aralina azul 1.jpg" alt="Traje de Baño Aralina Estampado">
+                
+                <div class="thumbnail-container">
+                    <img id="thumb-ara-exp-1" class="thumb-img" src="aralina azul 1.jpg" onclick="document.getElementById('img-aralina-exp-main').src=this.src" title="Vista 1">
+                    <img id="thumb-ara-exp-2" class="thumb-img" src="aralina azul 2.jpg" onclick="document.getElementById('img-aralina-exp-main').src=this.src" title="Vista 2">
+                </div>
+
+                <h3>Traje de Baño Aralina Estampado</h3>
+                <p class="description">Diseños explosivos y únicos que te harán resaltar en cualquier día de playa o piscina. ¡Vienen con su bolsita a juego!</p>
+                <div class="price">$25.00</div>
+                
+                <div class="product-options">
+                    <select id="talla-aralina-exp">
+                        <option value="" disabled selected>Talla</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                    </select>
+                    <select id="color-aralina-exp" onchange="actualizarFotosAralinaExp()">
+                        <option value="" disabled selected>Color</option>
+                        <option value="Azul Puntos">Azul Puntos</option>
+                        <option value="Cuadros Rosados">Cuadros Rosados</option>
+                        <option value="Marrón Rayas">Marrón Rayas</option>
+                        <option value="Marrón Puntos">Marrón Puntos</option>
+                        <option value="Rosado Puntos">Rosado Puntos</option>
+                        <option value="Rosado Rayas">Rosado Rayas</option>
+                    </select>
+                </div>
+                <button class="btn-add" onclick="addToCartWithOptions('Traje de Baño Aralina Estampado', 25, 'talla-aralina-exp', 'color-aralina-exp')">Añadir al Carrito</button>
             </div>
 
         </div>
@@ -808,7 +855,6 @@
         <h2>Contáctanos</h2>
         <p>¿Tienes dudas con tu talla, deseas hacer un pedido personalizado o quieres conocer más detalles sobre envíos? Estamos a un clic de distancia para asesorarte.</p>
         
-        <!-- Aquí están los nuevos datos de contacto -->
         <div class="contact-info">
             <p>📧 <strong>Correo:</strong> sofiaarl001@gmail.com</p>
             <p>📸 <strong>Instagram:</strong> <a href="https://instagram.com/kairo_vall" target="_blank" style="color: var(--color-yellow); text-decoration: none;">@kairo_vall</a></p>
@@ -899,12 +945,48 @@
                 if (colorSelect === "Azul") colorLimpio = "azul";
                 else if (colorSelect === "Rosado") colorLimpio = "rosado";
                 else if (colorSelect === "Rosado Claro") colorLimpio = "pink";
-                else if (colorSelect === "Marino") colorLimpio = "marino";
+                else if (colorSelect === "Azul Marino") colorLimpio = "marino";
                 else if (colorSelect === "Blanco") colorLimpio = "blanco";
 
                 document.getElementById('img-aralina-tdb-main').src = `tdb aralina ${colorLimpio} 1.jpg`;
                 document.getElementById('thumb-ara-tdb-1').src = `tdb aralina ${colorLimpio} 1.jpg`;
                 document.getElementById('thumb-ara-tdb-2').src = `tdb aralina ${colorLimpio} 2.jpg`;
+            }
+        }
+
+        function actualizarFotosAralinaExp() {
+            const colorSelect = document.getElementById('color-aralina-exp').value;
+            const imgMain = document.getElementById('img-aralina-exp-main');
+            const thumb1 = document.getElementById('thumb-ara-exp-1');
+            const thumb2 = document.getElementById('thumb-ara-exp-2');
+
+            // Aseguramos que ambas miniaturas estén visibles porque ahora todos tienen 2 fotos
+            thumb2.style.display = "inline-block";
+
+            if (colorSelect === "Azul Puntos") {
+                imgMain.src = "aralina azul 1.jpg";
+                thumb1.src = "aralina azul 1.jpg";
+                thumb2.src = "aralina azul 2.jpg";
+            } else if (colorSelect === "Cuadros Rosados") {
+                imgMain.src = "aralina cuadros 1.jpg";
+                thumb1.src = "aralina cuadros 1.jpg";
+                thumb2.src = "aralina cuadros 2.jpg";
+            } else if (colorSelect === "Marrón Rayas") {
+                imgMain.src = "aralina marron 1.jpg";
+                thumb1.src = "aralina marron 1.jpg";
+                thumb2.src = "aralina marron 2.jpg";
+            } else if (colorSelect === "Marrón Puntos") {
+                imgMain.src = "aralina puntos 1.jpg";
+                thumb1.src = "aralina puntos 1.jpg";
+                thumb2.src = "aralina puntos 2.jpg";
+            } else if (colorSelect === "Rosado Puntos") {
+                imgMain.src = "aralina puntos ros 1.jpg";
+                thumb1.src = "aralina puntos ros 1.jpg";
+                thumb2.src = "aralina puntos ros 2.jpg";
+            } else if (colorSelect === "Rosado Rayas") {
+                imgMain.src = "aralina rosado 1.jpg";
+                thumb1.src = "aralina rosado 1.jpg";
+                thumb2.src = "aralina rosado 2.jpg";
             }
         }
 
