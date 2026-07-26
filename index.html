@@ -591,7 +591,7 @@
         </div>
         <div class="products-grid">
             
-            <!-- Producto 1: Conjunto Aralina -->
+            <!-- Producto 1: Conjunto Aralina (Leggins) -->
             <div class="product-card">
                 <img id="img-aralina-main" class="main-product-img" src="img 1 negro.jpg" alt="Conjunto Aralina">
                 
@@ -652,12 +652,46 @@
                         <option value="Marrón">Marrón</option>
                         <option value="Rosa Viejo">Rosa Viejo</option>
                         <option value="Azul">Azul</option>
+                        <option value="Rojo">Rojo</option>
                     </select>
                 </div>
                 <button class="btn-add" onclick="addToCartWithOptions('Conjunto Deportivo Musera', 35, 'talla-musera', 'color-musera')">Añadir al Carrito</button>
             </div>
 
-            <!-- Producto 3: Suéter Varsitiva -->
+            <!-- Producto 3: Conjunto Aralina Short -->
+            <div class="product-card">
+                <img id="img-aralina-short-main" class="main-product-img" src="conjunto d aralina negro 1.jpg" alt="Conjunto Deportivo Aralina Short">
+                
+                <div class="thumbnail-container">
+                    <img id="thumb-ara-sh-1" class="thumb-img" src="conjunto d aralina negro 1.jpg" onclick="document.getElementById('img-aralina-short-main').src=this.src" title="Vista Frontal">
+                    <img id="thumb-ara-sh-2" class="thumb-img" src="conjunto d aralina negro 2.jpg" onclick="document.getElementById('img-aralina-short-main').src=this.src" title="Detalle Top">
+                    <img id="thumb-ara-sh-3" class="thumb-img" src="conjunto d aralina negro 3.jpg" onclick="document.getElementById('img-aralina-short-main').src=this.src" title="Vista Trasera">
+                </div>
+
+                <h3>Conjunto Deportivo Aralina Short</h3>
+                <p class="description">Frescura, libertad de movimiento y diseño súper moderno. Este conjunto de top y short es tu aliado ideal para los entrenamientos más intensos.</p>
+                <div class="price">$35.00</div>
+                
+                <div class="product-options">
+                    <select id="talla-aralina-short">
+                        <option value="" disabled selected>Talla</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <select id="color-aralina-short" onchange="actualizarFotosAralinaShort()">
+                        <option value="" disabled selected>Color</option>
+                        <option value="Negro">Negro</option>
+                        <option value="Azul">Azul</option>
+                        <option value="Marrón">Marrón</option>
+                        <option value="Vino">Vino</option>
+                    </select>
+                </div>
+                <button class="btn-add" onclick="addToCartWithOptions('Conjunto Deportivo Aralina Short', 35, 'talla-aralina-short', 'color-aralina-short')">Añadir al Carrito</button>
+            </div>
+
+            <!-- Producto 4: Suéter Varsitiva -->
             <div class="product-card">
                 <img id="img-varsitiva-main" class="main-product-img" src="saco beige.jpg" alt="Suéter Deportivo Varsitiva">
                 
@@ -701,7 +735,7 @@
         </div>
         <div class="products-grid">
             
-            <!-- Producto 4: Traje de Baño Swimvcay -->
+            <!-- Producto 5: Traje de Baño Swimvcay -->
             <div class="product-card">
                 <img id="img-swimvcay-main" class="main-product-img" src="tdb rosado img 1.jpg" alt="Traje de Baño Swimvcay">
                 
@@ -733,7 +767,7 @@
                 <button class="btn-add" onclick="addToCartWithOptions('Traje de Baño Swimvcay', 25, 'talla-swimvcay', 'color-swimvcay')">Añadir al Carrito</button>
             </div>
 
-            <!-- Producto 5: Traje de Baño Aralina (Colores Sólidos) -->
+            <!-- Producto 6: Traje de Baño Aralina (Colores Sólidos) -->
             <div class="product-card">
                 <img id="img-aralina-tdb-main" class="main-product-img" src="tdb aralina azul 1.jpg" alt="Traje de Baño Aralina">
                 
@@ -765,7 +799,7 @@
                 <button class="btn-add" onclick="addToCartWithOptions('Traje de Baño Aralina', 25, 'talla-aralina-tdb', 'color-aralina-tdb')">Añadir al Carrito</button>
             </div>
 
-            <!-- Producto 6: Traje de Baño Aralina Estampado -->
+            <!-- Producto 7: Traje de Baño Aralina Estampado -->
             <div class="product-card">
                 <img id="img-aralina-exp-main" class="main-product-img" src="aralina azul 1.jpg" alt="Traje de Baño Aralina Estampado">
                 
@@ -798,7 +832,7 @@
                 <button class="btn-add" onclick="addToCartWithOptions('Traje de Baño Aralina Estampado', 25, 'talla-aralina-exp', 'color-aralina-exp')">Añadir al Carrito</button>
             </div>
 
-            <!-- Producto 7: Pareo Glammy -->
+            <!-- Producto 8: Pareo Glammy -->
             <div class="product-card">
                 <img id="img-pareo-glammy-main" class="main-product-img" src="pareo blanco1.jpg" alt="Pareo Glammy">
                 
@@ -830,7 +864,7 @@
                 <button class="btn-add" onclick="addToCartWithOptions('Pareo Glammy', 20, 'talla-pareo-glammy', 'color-pareo-glammy')">Añadir al Carrito</button>
             </div>
 
-            <!-- Producto 8: Traje de Baño Aralina Enterizo -->
+            <!-- Producto 9: Traje de Baño Aralina Enterizo -->
             <div class="product-card">
                 <img id="img-aralina-ent-main" class="main-product-img" src="puntos azules 1.jpg" alt="Traje de Baño Aralina Enterizo">
                 
@@ -861,6 +895,69 @@
                     </select>
                 </div>
                 <button class="btn-add" onclick="addToCartWithOptions('Traje de Baño Aralina Enterizo', 25, 'talla-aralina-ent', 'color-aralina-ent')">Añadir al Carrito</button>
+            </div>
+
+            <!-- Producto 10: Set Playero Solsticio -->
+            <div class="product-card">
+                <img id="img-solsticio-main" class="main-product-img" src="conjunto p azul 1.jpg" alt="Set Playero Solsticio">
+                
+                <div class="thumbnail-container">
+                    <img id="thumb-sols-1" class="thumb-img" src="conjunto p azul 1.jpg" onclick="document.getElementById('img-solsticio-main').src=this.src" title="Vista Frontal">
+                    <img id="thumb-sols-2" class="thumb-img" src="conjunto p azul 2.jpg" onclick="document.getElementById('img-solsticio-main').src=this.src" title="Vista Trasera">
+                </div>
+
+                <h3>Set Playero Solsticio</h3>
+                <p class="description">El conjunto perfecto para tus tardes de yate o playa. Top asimétrico con manga murciélago y minifalda a juego que combinan elegancia y frescura.</p>
+                <div class="price">$30.00</div>
+                
+                <div class="product-options">
+                    <select id="talla-solsticio">
+                        <option value="" disabled selected>Talla</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                    </select>
+                    <select id="color-solsticio" onchange="actualizarFotosSolsticio()">
+                        <option value="" disabled selected>Color</option>
+                        <option value="Azul">Azul</option>
+                        <option value="Azul Claro">Azul Claro</option>
+                        <option value="Beige">Beige</option>
+                        <option value="Blanco">Blanco</option>
+                    </select>
+                </div>
+                <button class="btn-add" onclick="addToCartWithOptions('Set Playero Solsticio', 30, 'talla-solsticio', 'color-solsticio')">Añadir al Carrito</button>
+            </div>
+
+            <!-- NUEVO PRODUCTO 11: Traje de Baño Brillante Lumina -->
+            <div class="product-card">
+                <img id="img-lumina-main" class="main-product-img" src="tdb brillo blanco 1.jpg" alt="Traje de Baño Brillante Lumina">
+                
+                <div class="thumbnail-container">
+                    <img id="thumb-lum-1" class="thumb-img" src="tdb brillo blanco 1.jpg" onclick="document.getElementById('img-lumina-main').src=this.src" title="Vista Modelada">
+                    <img id="thumb-lum-2" class="thumb-img" src="tdb brillo blanco 2.jpg" onclick="document.getElementById('img-lumina-main').src=this.src" title="Vista Detalle">
+                </div>
+
+                <h3>Traje de Baño Brillante Lumina</h3>
+                <p class="description">Bikini de dos piezas con delicados bordados brillantes y lentejuelas que deslumbran bajo el sol. Elegancia y glamour puro para tus días de playa.</p>
+                <div class="price">$28.00</div>
+                
+                <div class="product-options">
+                    <select id="talla-lumina">
+                        <option value="" disabled selected>Talla</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                    </select>
+                    <select id="color-lumina" onchange="actualizarFotosLumina()">
+                        <option value="" disabled selected>Color</option>
+                        <option value="Blanco">Blanco</option>
+                        <option value="Beige">Beige</option>
+                        <option value="Beige Rosa">Beige Rosa</option>
+                        <option value="Rosado">Rosado</option>
+                        <option value="Morado">Morado</option>
+                    </select>
+                </div>
+                <button class="btn-add" onclick="addToCartWithOptions('Traje de Baño Brillante Lumina', 28, 'talla-lumina', 'color-lumina')">Añadir al Carrito</button>
             </div>
 
         </div>
@@ -963,17 +1060,55 @@
 
         function actualizarFotosMusera() {
             const colorSelect = document.getElementById('color-musera').value;
-            if (colorSelect) {
+            const imgMain = document.getElementById('img-musera-main');
+            const thumb1 = document.getElementById('thumb-mus-1');
+            const thumb2 = document.getElementById('thumb-mus-2');
+            const thumb3 = document.getElementById('thumb-mus-3');
+
+            if (colorSelect === "Rojo") {
+                imgMain.src = "conjunto d rojo 3.jpg";
+                thumb1.src = "conjunto d rojo 3.jpg";
+                thumb2.src = "conjunto d rojo 2.jpg";
+                thumb3.style.display = "none";
+            } else {
                 let colorLimpio = "";
                 if (colorSelect === "Rosado") colorLimpio = "rosado";
                 else if (colorSelect === "Marrón") colorLimpio = "marron";
                 else if (colorSelect === "Rosa Viejo") colorLimpio = "rviejo";
                 else if (colorSelect === "Azul") colorLimpio = "azul";
                 
-                document.getElementById('img-musera-main').src = `img musera 1 ${colorLimpio}.jpg`;
-                document.getElementById('thumb-mus-1').src = `img musera 1 ${colorLimpio}.jpg`;
-                document.getElementById('thumb-mus-2').src = `img musera 2 ${colorLimpio}.jpg`;
-                document.getElementById('thumb-mus-3').src = `img musera 3 ${colorLimpio}.jpg`;
+                imgMain.src = `img musera 1 ${colorLimpio}.jpg`;
+                thumb1.src = `img musera 1 ${colorLimpio}.jpg`;
+                thumb2.src = `img musera 2 ${colorLimpio}.jpg`;
+                thumb3.src = `img musera 3 ${colorLimpio}.jpg`;
+                thumb3.style.display = "inline-block";
+            }
+        }
+
+        function actualizarFotosAralinaShort() {
+            const colorSelect = document.getElementById('color-aralina-short').value;
+            const imgMain = document.getElementById('img-aralina-short-main');
+            const thumb1 = document.getElementById('thumb-ara-sh-1');
+            const thumb2 = document.getElementById('thumb-ara-sh-2');
+            const thumb3 = document.getElementById('thumb-ara-sh-3');
+
+            let colorLimpio = "";
+            if (colorSelect === "Negro") colorLimpio = "negro";
+            else if (colorSelect === "Azul") colorLimpio = "azul";
+            else if (colorSelect === "Marrón") colorLimpio = "marron";
+            else if (colorSelect === "Vino") colorLimpio = "vino";
+
+            imgMain.src = `conjunto d aralina ${colorLimpio} 1.jpg`;
+            thumb1.src = `conjunto d aralina ${colorLimpio} 1.jpg`;
+
+            if (colorSelect === "Vino") {
+                thumb2.style.display = "none";
+                thumb3.style.display = "none";
+            } else {
+                thumb2.src = `conjunto d aralina ${colorLimpio} 2.jpg`;
+                thumb3.src = `conjunto d aralina ${colorLimpio} 3.jpg`;
+                thumb2.style.display = "inline-block";
+                thumb3.style.display = "inline-block";
             }
         }
 
@@ -1089,7 +1224,6 @@
             const thumb1 = document.getElementById('thumb-ara-ent-1');
             const thumb2 = document.getElementById('thumb-ara-ent-2');
 
-            // Ahora todos tienen 2 fotos, así que nos aseguramos de que thumb2 esté visible
             thumb2.style.display = "inline-block";
 
             if (colorSelect === "Puntos Azules") {
@@ -1117,6 +1251,42 @@
                 thumb1.src = "rayas rosadas 1.jpg";
                 thumb2.src = "rayas rosadas 2.jpg"; 
             }
+        }
+
+        function actualizarFotosSolsticio() {
+            const colorSelect = document.getElementById('color-solsticio').value;
+            const imgMain = document.getElementById('img-solsticio-main');
+            const thumb1 = document.getElementById('thumb-sols-1');
+            const thumb2 = document.getElementById('thumb-sols-2');
+
+            let colorLimpio = "";
+            if (colorSelect === "Azul") colorLimpio = "azul";
+            else if (colorSelect === "Azul Claro") colorLimpio = "azul claro";
+            else if (colorSelect === "Beige") colorLimpio = "beige";
+            else if (colorSelect === "Blanco") colorLimpio = "blanco";
+
+            imgMain.src = `conjunto p ${colorLimpio} 1.jpg`;
+            thumb1.src = `conjunto p ${colorLimpio} 1.jpg`;
+            thumb2.src = `conjunto p ${colorLimpio} 2.jpg`;
+        }
+
+        // NUEVA FUNCIÓN: TRAJE DE BAÑO BRILLANTE LUMINA
+        function actualizarFotosLumina() {
+            const colorSelect = document.getElementById('color-lumina').value;
+            const imgMain = document.getElementById('img-lumina-main');
+            const thumb1 = document.getElementById('thumb-lum-1');
+            const thumb2 = document.getElementById('thumb-lum-2');
+
+            let colorLimpio = "";
+            if (colorSelect === "Blanco") colorLimpio = "blanco";
+            else if (colorSelect === "Beige") colorLimpio = "beige";
+            else if (colorSelect === "Beige Rosa") colorLimpio = "beige rosa";
+            else if (colorSelect === "Rosado") colorLimpio = "rosado";
+            else if (colorSelect === "Morado") colorLimpio = "morado";
+
+            imgMain.src = `tdb brillo ${colorLimpio} 1.jpg`;
+            thumb1.src = `tdb brillo ${colorLimpio} 1.jpg`;
+            thumb2.src = `tdb brillo ${colorLimpio} 2.jpg`;
         }
 
         function addToCartWithOptions(productName, price, selectTallaId, selectColorId) {
