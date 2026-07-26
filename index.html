@@ -318,7 +318,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transform: scale(1.15); /* Quita el borde rosado y llena el círculo */
+            transform: scale(1.15); 
         }
 
         .conocenos-section h2 {
@@ -798,6 +798,71 @@
                 <button class="btn-add" onclick="addToCartWithOptions('Traje de Baño Aralina Estampado', 25, 'talla-aralina-exp', 'color-aralina-exp')">Añadir al Carrito</button>
             </div>
 
+            <!-- Producto 7: Pareo Glammy -->
+            <div class="product-card">
+                <img id="img-pareo-glammy-main" class="main-product-img" src="pareo blanco1.jpg" alt="Pareo Glammy">
+                
+                <div class="thumbnail-container">
+                    <img id="thumb-pareo-1" class="thumb-img" src="pareo blanco1.jpg" onclick="document.getElementById('img-pareo-glammy-main').src=this.src" title="Vista Frontal">
+                    <img id="thumb-pareo-2" class="thumb-img" src="pareo blanco 2.jpg" onclick="document.getElementById('img-pareo-glammy-main').src=this.src" title="Vista Trasera">
+                </div>
+
+                <h3>Pareo Glammy</h3>
+                <p class="description">Muy chic y con un estilo único que te dará confort y seguridad sobre tu traje de baño. La pieza ideal para elevar tu look de playa.</p>
+                <div class="price">$20.00</div>
+                
+                <div class="product-options">
+                    <select id="talla-pareo-glammy">
+                        <option value="" disabled selected>Talla</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                    </select>
+                    <select id="color-pareo-glammy" onchange="actualizarFotosPareoGlammy()">
+                        <option value="" disabled selected>Color</option>
+                        <option value="Blanco">Blanco</option>
+                        <option value="Beige">Beige</option>
+                        <option value="Azul Cielo">Azul Cielo</option>
+                        <option value="Azul">Azul</option>
+                        <option value="Negro">Negro</option>
+                    </select>
+                </div>
+                <button class="btn-add" onclick="addToCartWithOptions('Pareo Glammy', 20, 'talla-pareo-glammy', 'color-pareo-glammy')">Añadir al Carrito</button>
+            </div>
+
+            <!-- Producto 8: Traje de Baño Aralina Enterizo -->
+            <div class="product-card">
+                <img id="img-aralina-ent-main" class="main-product-img" src="puntos azules 1.jpg" alt="Traje de Baño Aralina Enterizo">
+                
+                <div class="thumbnail-container">
+                    <img id="thumb-ara-ent-1" class="thumb-img" src="puntos azules 1.jpg" onclick="document.getElementById('img-aralina-ent-main').src=this.src" title="Vista Frontal">
+                    <img id="thumb-ara-ent-2" class="thumb-img" src="puntos azules 2.jpg" onclick="document.getElementById('img-aralina-ent-main').src=this.src" title="Vista Trasera">
+                </div>
+
+                <h3>Traje de Baño Aralina Enterizo</h3>
+                <p class="description">Máxima comodidad con un diseño sencillo pero dinámico y colores llamativos que seguro te harán destacar. Pieza enteriza de estilo inigualable.</p>
+                <div class="price">$25.00</div>
+                
+                <div class="product-options">
+                    <select id="talla-aralina-ent">
+                        <option value="" disabled selected>Talla</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                    </select>
+                    <select id="color-aralina-ent" onchange="actualizarFotosAralinaEnterizo()">
+                        <option value="" disabled selected>Color</option>
+                        <option value="Puntos Azules">Puntos Azules</option>
+                        <option value="Puntos Marrones">Puntos Marrones</option>
+                        <option value="Puntos Rosados">Puntos Rosados</option>
+                        <option value="Rayas Azules">Rayas Azules</option>
+                        <option value="Rayas Fucsia">Rayas Fucsia</option>
+                        <option value="Rayas Rosadas">Rayas Rosadas</option>
+                    </select>
+                </div>
+                <button class="btn-add" onclick="addToCartWithOptions('Traje de Baño Aralina Enterizo', 25, 'talla-aralina-ent', 'color-aralina-ent')">Añadir al Carrito</button>
+            </div>
+
         </div>
     </section>
 
@@ -960,7 +1025,6 @@
             const thumb1 = document.getElementById('thumb-ara-exp-1');
             const thumb2 = document.getElementById('thumb-ara-exp-2');
 
-            // Aseguramos que ambas miniaturas estén visibles porque ahora todos tienen 2 fotos
             thumb2.style.display = "inline-block";
 
             if (colorSelect === "Azul Puntos") {
@@ -987,6 +1051,71 @@
                 imgMain.src = "aralina rosado 1.jpg";
                 thumb1.src = "aralina rosado 1.jpg";
                 thumb2.src = "aralina rosado 2.jpg";
+            }
+        }
+
+        function actualizarFotosPareoGlammy() {
+            const colorSelect = document.getElementById('color-pareo-glammy').value;
+            const imgMain = document.getElementById('img-pareo-glammy-main');
+            const thumb1 = document.getElementById('thumb-pareo-1');
+            const thumb2 = document.getElementById('thumb-pareo-2');
+
+            if (colorSelect === "Blanco") {
+                imgMain.src = "pareo blanco1.jpg";
+                thumb1.src = "pareo blanco1.jpg";
+                thumb2.src = "pareo blanco 2.jpg";
+            } else if (colorSelect === "Azul") {
+                imgMain.src = "pareo azul 1.jpg";
+                thumb1.src = "pareo azul 1.jpg";
+                thumb2.src = "pareo azul 2.jpg";
+            } else if (colorSelect === "Azul Cielo") {
+                imgMain.src = "pareo azul cielo 1.jpg";
+                thumb1.src = "pareo azul cielo 1.jpg";
+                thumb2.src = "pareo azul cielo 2.jpg";
+            } else if (colorSelect === "Beige") {
+                imgMain.src = "pareo beige 1.jpg";
+                thumb1.src = "pareo beige 1.jpg";
+                thumb2.src = "pareo beige 2.jpg";
+            } else if (colorSelect === "Negro") {
+                imgMain.src = "pateo negro 1.jpg";
+                thumb1.src = "pateo negro 1.jpg";
+                thumb2.src = "pateo negro 2.jpg";
+            }
+        }
+
+        function actualizarFotosAralinaEnterizo() {
+            const colorSelect = document.getElementById('color-aralina-ent').value;
+            const imgMain = document.getElementById('img-aralina-ent-main');
+            const thumb1 = document.getElementById('thumb-ara-ent-1');
+            const thumb2 = document.getElementById('thumb-ara-ent-2');
+
+            // Ahora todos tienen 2 fotos, así que nos aseguramos de que thumb2 esté visible
+            thumb2.style.display = "inline-block";
+
+            if (colorSelect === "Puntos Azules") {
+                imgMain.src = "puntos azules 1.jpg";
+                thumb1.src = "puntos azules 1.jpg";
+                thumb2.src = "puntos azules 2.jpg";
+            } else if (colorSelect === "Puntos Marrones") {
+                imgMain.src = "puntos marrones 1.jpg";
+                thumb1.src = "puntos marrones 1.jpg";
+                thumb2.src = "puntos marrones 2.jpg";
+            } else if (colorSelect === "Puntos Rosados") {
+                imgMain.src = "puntos rosados 1.jpg";
+                thumb1.src = "puntos rosados 1.jpg";
+                thumb2.src = "puntos rosados 2.jpg"; 
+            } else if (colorSelect === "Rayas Azules") {
+                imgMain.src = "rayas azules 1.jpg";
+                thumb1.src = "rayas azules 1.jpg";
+                thumb2.src = "rayas azules 2.jpg";
+            } else if (colorSelect === "Rayas Fucsia") {
+                imgMain.src = "rayas fucsia 1.jpg";
+                thumb1.src = "rayas fucsia 1.jpg";
+                thumb2.src = "rayas fucsia 2.jpg";
+            } else if (colorSelect === "Rayas Rosadas") {
+                imgMain.src = "rayas rosadas 1.jpg";
+                thumb1.src = "rayas rosadas 1.jpg";
+                thumb2.src = "rayas rosadas 2.jpg"; 
             }
         }
 
