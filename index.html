@@ -723,6 +723,39 @@
                 <button class="btn-add" onclick="addToCartWithOptions('Suéter Deportivo Varsitiva', 25, 'talla-varsitiva', 'color-varsitiva')">Añadir al Carrito</button>
             </div>
 
+            <!-- Producto 5: Conjunto Deportivo Urban Track -->
+            <div class="product-card">
+                <img id="img-urban-main" class="main-product-img" src="conjunto d azul 1.jpg" alt="Conjunto Deportivo Urban Track">
+                
+                <div class="thumbnail-container">
+                    <img id="thumb-urb-1" class="thumb-img" src="conjunto d azul 1.jpg" onclick="document.getElementById('img-urban-main').src=this.src" title="Vista Frontal">
+                    <img id="thumb-urb-2" class="thumb-img" src="conjunto d azul 2.jpg" onclick="document.getElementById('img-urban-main').src=this.src" title="Vista Trasera">
+                    <img id="thumb-urb-3" class="thumb-img" src="conjunto d azul 3.jpg" onclick="document.getElementById('img-urban-main').src=this.src" title="Detalle Chaqueta">
+                </div>
+
+                <h3>Conjunto Deportivo Urban Track</h3>
+                <p class="description">Chaqueta cortavientos con cremallera y pantalón jogger holgado con franjas laterales. Estilo urbano y deportivo de máxima comodidad.</p>
+                <div class="price">$38.00</div>
+                
+                <div class="product-options">
+                    <select id="talla-urban">
+                        <option value="" disabled selected>Talla</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <select id="color-urban" onchange="actualizarFotosUrban()">
+                        <option value="" disabled selected>Color</option>
+                        <option value="Azul">Azul</option>
+                        <option value="Gris">Gris</option>
+                        <option value="Marrón">Marrón</option>
+                        <option value="Rojo">Rojo</option>
+                    </select>
+                </div>
+                <button class="btn-add" onclick="addToCartWithOptions('Conjunto Deportivo Urban Track', 38, 'talla-urban', 'color-urban')">Añadir al Carrito</button>
+            </div>
+
         </div>
     </section>
 
@@ -735,7 +768,7 @@
         </div>
         <div class="products-grid">
             
-            <!-- Producto 5: Traje de Baño Swimvcay -->
+            <!-- Producto 6: Traje de Baño Swimvcay -->
             <div class="product-card">
                 <img id="img-swimvcay-main" class="main-product-img" src="tdb rosado img 1.jpg" alt="Traje de Baño Swimvcay">
                 
@@ -767,7 +800,7 @@
                 <button class="btn-add" onclick="addToCartWithOptions('Traje de Baño Swimvcay', 25, 'talla-swimvcay', 'color-swimvcay')">Añadir al Carrito</button>
             </div>
 
-            <!-- Producto 6: Traje de Baño Aralina (Colores Sólidos) -->
+            <!-- Producto 7: Traje de Baño Aralina (Colores Sólidos) -->
             <div class="product-card">
                 <img id="img-aralina-tdb-main" class="main-product-img" src="tdb aralina azul 1.jpg" alt="Traje de Baño Aralina">
                 
@@ -799,7 +832,7 @@
                 <button class="btn-add" onclick="addToCartWithOptions('Traje de Baño Aralina', 25, 'talla-aralina-tdb', 'color-aralina-tdb')">Añadir al Carrito</button>
             </div>
 
-            <!-- Producto 7: Traje de Baño Aralina Estampado -->
+            <!-- Producto 8: Traje de Baño Aralina Estampado -->
             <div class="product-card">
                 <img id="img-aralina-exp-main" class="main-product-img" src="aralina azul 1.jpg" alt="Traje de Baño Aralina Estampado">
                 
@@ -832,7 +865,7 @@
                 <button class="btn-add" onclick="addToCartWithOptions('Traje de Baño Aralina Estampado', 25, 'talla-aralina-exp', 'color-aralina-exp')">Añadir al Carrito</button>
             </div>
 
-            <!-- Producto 8: Pareo Glammy -->
+            <!-- Producto 9: Pareo Glammy -->
             <div class="product-card">
                 <img id="img-pareo-glammy-main" class="main-product-img" src="pareo blanco1.jpg" alt="Pareo Glammy">
                 
@@ -864,7 +897,7 @@
                 <button class="btn-add" onclick="addToCartWithOptions('Pareo Glammy', 20, 'talla-pareo-glammy', 'color-pareo-glammy')">Añadir al Carrito</button>
             </div>
 
-            <!-- Producto 9: Traje de Baño Aralina Enterizo -->
+            <!-- Producto 10: Traje de Baño Aralina Enterizo -->
             <div class="product-card">
                 <img id="img-aralina-ent-main" class="main-product-img" src="puntos azules 1.jpg" alt="Traje de Baño Aralina Enterizo">
                 
@@ -897,7 +930,7 @@
                 <button class="btn-add" onclick="addToCartWithOptions('Traje de Baño Aralina Enterizo', 25, 'talla-aralina-ent', 'color-aralina-ent')">Añadir al Carrito</button>
             </div>
 
-            <!-- Producto 10: Set Playero Solsticio -->
+            <!-- Producto 11: Set Playero Solsticio -->
             <div class="product-card">
                 <img id="img-solsticio-main" class="main-product-img" src="conjunto p azul 1.jpg" alt="Set Playero Solsticio">
                 
@@ -928,7 +961,7 @@
                 <button class="btn-add" onclick="addToCartWithOptions('Set Playero Solsticio', 30, 'talla-solsticio', 'color-solsticio')">Añadir al Carrito</button>
             </div>
 
-            <!-- NUEVO PRODUCTO 11: Traje de Baño Brillante Lumina -->
+            <!-- Producto 12: Traje de Baño Brillante Lumina -->
             <div class="product-card">
                 <img id="img-lumina-main" class="main-product-img" src="tdb brillo blanco 1.jpg" alt="Traje de Baño Brillante Lumina">
                 
@@ -1122,6 +1155,34 @@
             else if (colorSelect === 'Azul') imgMain.src = 'saco azul.jpg';
         }
 
+        // ACTUALIZACIÓN: CONJUNTO DEPORTIVO URBAN TRACK (CON SOPORTE PARA SUFIJOS _2)
+        function actualizarFotosUrban() {
+            const colorSelect = document.getElementById('color-urban').value;
+            const imgMain = document.getElementById('img-urban-main');
+            const thumb1 = document.getElementById('thumb-urb-1');
+            const thumb2 = document.getElementById('thumb-urb-2');
+            const thumb3 = document.getElementById('thumb-urb-3');
+
+            let colorLimpio = "";
+            if (colorSelect === "Azul") colorLimpio = "azul";
+            else if (colorSelect === "Gris") colorLimpio = "gris";
+            else if (colorSelect === "Marrón") colorLimpio = "marron";
+            else if (colorSelect === "Rojo") colorLimpio = "rojo";
+
+            let prefixGris = (colorSelect === "Gris") ? "conjunto d gris1.jpg" : `conjunto d ${colorLimpio} 1.jpg`;
+            
+            imgMain.src = prefixGris;
+            thumb1.src = prefixGris;
+
+            if (colorSelect === "Rojo") {
+                thumb2.src = `conjunto d rojo 2_2.jpg`;
+                thumb3.src = `conjunto d rojo 3_2.jpg`;
+            } else {
+                thumb2.src = `conjunto d ${colorLimpio} 2.jpg`;
+                thumb3.src = `conjunto d ${colorLimpio} 3.jpg`;
+            }
+        }
+
         function actualizarFotosSwimvcay() {
             const colorSelect = document.getElementById('color-swimvcay').value;
             if (colorSelect) {
@@ -1270,7 +1331,6 @@
             thumb2.src = `conjunto p ${colorLimpio} 2.jpg`;
         }
 
-        // NUEVA FUNCIÓN: TRAJE DE BAÑO BRILLANTE LUMINA
         function actualizarFotosLumina() {
             const colorSelect = document.getElementById('color-lumina').value;
             const imgMain = document.getElementById('img-lumina-main');
